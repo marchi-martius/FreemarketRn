@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Text } from 'react-native';
 
 export default class ProductsList extends Component {
-    render() {
-	return(
-	    <Text>Hello World!</Text>
-	);
-    }
+  render() {
+    return(
+      <Text>Hello World!</Text>
+    );
+  }
 }
