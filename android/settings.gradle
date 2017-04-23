@@ -1,0 +1,3 @@
+rootProject.name = 'FreemarketRn'
+
+include ':app'
