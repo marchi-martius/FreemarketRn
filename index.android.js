@@ -28,7 +28,6 @@ export default class FreemarketRn extends Component {
 	return (
 	    <DrawerLayoutAndroid
 	      drawerWidth={300}
-	      drawerPosition={DrawerLayoutAndroid.positions.left}
 	      renderNavigationView={this.renderNavigationView}>
 	      <ProductsList />
 	    </DrawerLayoutAndroid>
