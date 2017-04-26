@@ -4,7 +4,7 @@ import { Text } from 'react-native';
 export default class ProductsList extends Component {
   render() {
     return(
-      <Text>Hello World!</Text>
+      <Text>List of products go here</Text>
     );
   }
 }
