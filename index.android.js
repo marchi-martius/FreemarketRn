@@ -11,7 +11,8 @@ import {
   Text,
   View,
   DrawerLayoutAndroid,
-  ListView
+  ListView,
+  TouchableHighlight
 } from 'react-native';
 
 import ProductsList from './app/containers/ProductsList';
@@ -29,8 +30,15 @@ export default class FreemarketRn extends Component {
     super();
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(Categories)
+      dataSource: ds.cloneWithRows(Categories),
+      categoryIndex: 0
     };
+  }
+
+  onPressCategory(index) {
+    this.setState({
+      categoryIndex: index
+    });
   }
 
   renderNavigationView() {
@@ -39,7 +47,7 @@ export default class FreemarketRn extends Component {
 	      <Text>Categories</Text>
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={(rowData) => <Text>{rowData.name}</Text>}
+          renderRow={(rowData, sectionID, rowID) => <TouchableHighlight onPress={this.onPressCategory.bind(this, rowID)}><Text>{rowData.name}</Text></TouchableHighlight>}
         />
       </View>
     );
@@ -50,7 +58,7 @@ export default class FreemarketRn extends Component {
       <DrawerLayoutAndroid
         	drawerWidth={300}
         	renderNavigationView={this.renderNavigationView.bind(this)}>
-      	<ProductsList />
+      	<ProductsList category={Categories[this.state.categoryIndex]} />
       </DrawerLayoutAndroid>
     );
   }
