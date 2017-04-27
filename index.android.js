@@ -16,6 +16,7 @@ import {
 } from 'react-native';
 
 import ProductsList from './app/containers/ProductsList';
+import CategoriesList from './app/containers/CategoriesList';
 import { Categories } from './app/Constants';
 
 export default class FreemarketRn extends Component {
@@ -38,9 +39,9 @@ export default class FreemarketRn extends Component {
     return(
       <View style={styles.navigationView}>
 	      <Text>Categories</Text>
-        <ListView
+        <CategoriesList
           dataSource={this.state.dataSource}
-          renderRow={(rowData, sectionID, rowID) => <TouchableHighlight onPress={this.onPressCategory.bind(this, rowID)}><Text>{rowData.name}</Text></TouchableHighlight>}
+          onPressCategory={this.onPressCategory.bind(this)}
         />
       </View>
     );
