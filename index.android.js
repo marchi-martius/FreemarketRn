@@ -16,14 +16,7 @@ import {
 } from 'react-native';
 
 import ProductsList from './app/containers/ProductsList';
-
-const Categories = [
-  {name: 'Antiques'},
-  {name: 'Books, Comics & Magazines'},
-  {name: 'Cars, Motorcycles & Vehicles'},
-  {name: 'Events Tickets'},
-  {name: 'Pet Supplies'}
-]
+import { Categories } from './app/Constants';
 
 export default class FreemarketRn extends Component {
   constructor() {
