@@ -11,7 +11,6 @@ import {
   Text,
   View,
   DrawerLayoutAndroid,
-  ListView,
   TouchableHighlight
 } from 'react-native';
 
@@ -22,9 +21,8 @@ import { Categories } from './app/Constants';
 export default class FreemarketRn extends Component {
   constructor() {
     super();
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(Categories),
+      categories: Categories,
       categoryIndex: 0
     };
   }
@@ -40,7 +38,7 @@ export default class FreemarketRn extends Component {
       <View style={styles.navigationView}>
 	      <Text>Categories</Text>
         <CategoriesList
-          dataSource={this.state.dataSource}
+          categories={this.state.categories}
           onPressCategory={this.onPressCategory.bind(this)}
         />
       </View>
