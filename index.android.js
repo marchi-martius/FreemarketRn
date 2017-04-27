@@ -11,7 +11,6 @@ import {
   Text,
   View,
   DrawerLayoutAndroid,
-  TouchableHighlight
 } from 'react-native';
 
 import ProductsList from './app/containers/ProductsList';
@@ -33,6 +32,10 @@ export default class FreemarketRn extends Component {
     });
   }
 
+  currentCategory() {
+    return this.state.categories[this.state.categoryIndex];
+  }
+
   renderNavigationView() {
     return(
       <View style={styles.navigationView}>
@@ -50,7 +53,7 @@ export default class FreemarketRn extends Component {
       <DrawerLayoutAndroid
         	drawerWidth={300}
         	renderNavigationView={this.renderNavigationView.bind(this)}>
-      	<ProductsList category={Categories[this.state.categoryIndex]} />
+      	<ProductsList category={this.currentCategory()} />
       </DrawerLayoutAndroid>
     );
   }
