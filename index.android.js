@@ -1,45 +1,39 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+/* eslint react/jsx-filename-extension: 0 */
 
-import { Component } from 'react';
+import React from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View,
-  DrawerLayoutAndroid
-} from 'react-native';
+  DrawerLayoutAndroid } from 'react-native';
 
 import ProductsList from './app/containers/ProductsList';
-
-export default class FreemarketRn extends Component {
-  renderNavigationView() {
-    return(
-      <View style={styles.navigationView}>
-	<Text>Hello World</Text>
-      </View>
-    );
-  }
-
-  render() {
-    return (
-      <DrawerLayoutAndroid
-	drawerWidth={300}
-	renderNavigationView={this.renderNavigationView}>
-	<ProductsList />
-      </DrawerLayoutAndroid>
-    );
-  }
-}
 
 const styles = StyleSheet.create({
   navigationView: {
     flex: 1,
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 });
+
+function renderNavigationView() {
+  return (
+    <View style={styles.navigationView}>
+      <Text>Hello World</Text>
+    </View>
+  );
+}
+
+export default function FreemarketRn() {
+  return (
+    <DrawerLayoutAndroid
+      drawerWidth={300}
+      renderNavigationView={renderNavigationView}
+    >
+      <ProductsList />
+    </DrawerLayoutAndroid>
+  );
+}
 
 AppRegistry.registerComponent('FreemarketRn', () => FreemarketRn);
