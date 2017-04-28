@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function renderNavigationView() {
+function NavigationView() {
   return (
     <View style={styles.navigationView}>
       <Text>Hello World</Text>
@@ -30,7 +30,7 @@ export default function FreemarketRn() {
   return (
     <DrawerLayoutAndroid
       drawerWidth={300}
-      renderNavigationView={renderNavigationView}
+      renderNavigationView={() => NavigationView}
     >
       <ProductsList />
     </DrawerLayoutAndroid>
