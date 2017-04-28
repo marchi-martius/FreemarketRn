@@ -1,10 +1,9 @@
 module.exports = {
-    "extends": "standard",
-    "plugins": [
-      "standard",
-      "promise",
-      "import",
-      "node",
-      "react-native"
-    ]
+  "extends": "airbnb",
+  "plugins": [
+    "react",
+    "react-native",
+    "jsx-a11y",
+    "import"
+  ]
 };
