@@ -6,7 +6,8 @@ import {
   StyleSheet,
   Text,
   View,
-  DrawerLayoutAndroid } from 'react-native';
+  DrawerLayoutAndroid,
+} from 'react-native';
 
 import ProductsList from './app/containers/ProductsList';
 
