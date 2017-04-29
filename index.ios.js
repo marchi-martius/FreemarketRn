@@ -1,3 +1,4 @@
+/* eslint react/jsx-filename-extension: 0 */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native

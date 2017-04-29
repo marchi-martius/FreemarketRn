@@ -1,13 +1,11 @@
-import 'react-native'
-import React from 'react'
-import ProductsList from '../ProductsList'
+import 'react-native';
+import React from 'react';
+import renderer from 'react-test-renderer';
 
-import renderer from 'react-test-renderer'
+import ProductsList from '../ProductsList';
 
 it('renders correctly', () => {
-  const tree = renderer.create(
-    <ProductsList />
-  ).toJSON();
+  const tree = renderer.create(<ProductsList />).toJSON();
 
   expect(tree).toMatchSnapshot();
-})
+});

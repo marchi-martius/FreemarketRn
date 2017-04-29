@@ -1,13 +1,14 @@
+/* eslint react/jsx-filename-extension: 0 */
+
 import 'react-native';
 import React from 'react';
-import Index from '../index.android.js';
-
-// Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
+
+import Index from '../index.android';
 
 it('renders correctly', () => {
   const tree = renderer.create(
-    <Index />
+    <Index />,
   ).toJSON();
 
   expect(tree).toMatchSnapshot();
