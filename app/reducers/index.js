@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
-import categoriesReducer from './category';
+import categoryIndex from './categoryIndex';
+import categories from './categories';
 
 const rootReducer = combineReducers({
-  categoriesReducer
+  categories,
+  categoryIndex
 });
 
 export default rootReducer;
