@@ -11,6 +11,7 @@ import {
   View,
   DrawerLayoutAndroid,
 } from 'react-native';
+import { connect } from 'react-redux';
 // import { Provider } from 'react-redux'
 // import { createStore } from 'redux'
 
@@ -25,7 +26,7 @@ import { Categories } from './lib/Constants';
 // };
 // const store = createStore(rootReducer, initialState);
 
-export default class App extends Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -73,3 +74,10 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 });
+
+const mapStateToProps = (state) => ({
+    categories: state.categories,
+    categoryIndex: state.categoryIndex
+});
+
+export default connect(mapStateToProps)(App);
