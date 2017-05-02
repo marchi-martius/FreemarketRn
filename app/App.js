@@ -12,37 +12,20 @@ import {
   DrawerLayoutAndroid,
 } from 'react-native';
 import { connect } from 'react-redux';
-// import { Provider } from 'react-redux'
-// import { createStore } from 'redux'
+import { bindActionCreators } from 'redux';
 
 import ProductsList from './containers/ProductsList';
 import CategoriesList from './containers/CategoriesList';
-import { Categories } from './lib/Constants';
-// import rootReducer from './app/reducers'
-
-// const initialState = {
-//   categories: Categories,
-//   categoryIndex: 0
-// };
-// const store = createStore(rootReducer, initialState);
+import { setCurrentCategory } from './actions/categories'
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      categories: Categories,
-      categoryIndex: 0
-    };
-  }
 
-  onPressCategory(index) {
-    this.setState({
-      categoryIndex: index
-    });
+  onPressCategory = (index) => {
+    this.props.setCategory(index);
   }
 
   currentCategory() {
-    return this.state.categories[this.state.categoryIndex];
+    return this.props.categories[this.props.categoryIndex];
   }
 
   renderNavigationView() {
@@ -50,8 +33,8 @@ class App extends Component {
       <View style={styles.navigationView}>
 	      <Text>Categories</Text>
         <CategoriesList
-          categories={this.state.categories}
-          onPressCategory={this.onPressCategory.bind(this)}
+          categories={this.props.categories}
+          onPressCategory={this.onPressCategory}
         />
       </View>
     );
@@ -62,7 +45,9 @@ class App extends Component {
       <DrawerLayoutAndroid
         	drawerWidth={300}
         	renderNavigationView={this.renderNavigationView.bind(this)}>
-      	<ProductsList category={this.currentCategory()} />
+      	<ProductsList category={this.currentCategory()}
+
+         />
       </DrawerLayoutAndroid>
     );
   }
@@ -76,8 +61,16 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state) => ({
-    categories: state.categories,
-    categoryIndex: state.categoryIndex
+  categories: state.categories,
+  categoryIndex: state.categoryIndex
 });
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setCategory: (index) => {
+      dispatch(setCurrentCategory(index));
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
