@@ -10,6 +10,7 @@
   "dependencies": {
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.4",
+    "react-redux": "^5.0.4",
     "react-shallow-testutils": "^3.0.0"
   },
   "devDependencies": {
