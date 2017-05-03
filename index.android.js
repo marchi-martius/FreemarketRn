@@ -1,8 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+/* eslint react/jsx-filename-extension: 0 */
 
 import React, { Component } from 'react';
 import {
@@ -62,8 +58,8 @@ export default class FreemarketRn extends Component {
 const styles = StyleSheet.create({
   navigationView: {
     flex: 1,
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 });
 
 AppRegistry.registerComponent('FreemarketRn', () => FreemarketRn);
