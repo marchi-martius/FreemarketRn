@@ -2,12 +2,12 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import CategoriesList from '../CategoriesList';
-import Categories from '../../constants/Categories';
+import CategoryList from '../CategoryList';
+import categories from '../../constants/categories';
 
 it('renders successfully', () => {
   const tree = renderer.create(
-    <CategoriesList categories={Categories} onPressCategory={() => true}/>,
+    <CategoryList categories={categories} onPressCategory={() => true} />,
   ).toJSON();
 
   expect(tree).toMatchSnapshot();
