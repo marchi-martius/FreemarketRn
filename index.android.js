@@ -1,6 +1,4 @@
-/* eslint react/jsx-filename-extension: 0 */
-
-import React from 'react';
+import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
@@ -9,7 +7,10 @@ import {
   DrawerLayoutAndroid,
 } from 'react-native';
 
-import ProductsList from './app/containers/ProductsList';
+import ProductList from './app/containers/ProductList';
+import CategoryList from './app/containers/CategoryList';
+
+import categories from './app/constants/categories';
 
 const styles = StyleSheet.create({
   navigationView: {
@@ -18,23 +19,38 @@ const styles = StyleSheet.create({
   },
 });
 
-function NavigationView() {
-  return (
-    <View style={styles.navigationView}>
-      <Text>Hello World</Text>
-    </View>
-  );
-}
+export default class FreemarketRn extends Component {
+  constructor() {
+    super();
+    this.state = { categoryIndex: 0 };
+  }
 
-export default function FreemarketRn() {
-  return (
-    <DrawerLayoutAndroid
-      drawerWidth={300}
-      renderNavigationView={() => NavigationView}
-    >
-      <ProductsList />
-    </DrawerLayoutAndroid>
-  );
+  currentCategory() {
+    return categories[this.state.categoryIndex];
+  }
+
+  renderNavigationView() {
+    return (
+      <View style={styles.navigationView}>
+        <Text>Categories</Text>
+        <CategoryList
+          categories={categories}
+          onPressCategory={index => this.setState({ categoryIndex: index })}
+        />
+      </View>
+    );
+  }
+
+  render() {
+    return (
+      <DrawerLayoutAndroid
+        drawerWidth={300}
+        renderNavigationView={() => this.renderNavigationView()}
+      >
+        <ProductList category={this.currentCategory()} />
+      </DrawerLayoutAndroid>
+    );
+  }
 }
 
 AppRegistry.registerComponent('FreemarketRn', () => FreemarketRn);

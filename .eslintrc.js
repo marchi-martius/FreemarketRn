@@ -15,5 +15,8 @@ module.exports = {
   ],
   "env": {
     "jest/globals": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": 0
   }
 };

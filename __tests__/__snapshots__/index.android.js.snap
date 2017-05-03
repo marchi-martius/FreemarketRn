@@ -18,7 +18,8 @@ exports[`renders correctly 1`] = `
     allowFontScaling={true}
     ellipsizeMode="tail"
   >
-    Hello World!
+    List of products go here for 
+    Antiques
   </Text>
 </View>
 `;
