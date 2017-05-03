@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import CategoryListRow from '../components/CategoryListRow';
-import { selectCategory } from '../actions/categories';
+import { selectCategory } from '../reducers/categories';
 
 mapStateToProps = (state, ownProps) => {
   const { id: currentId } = state.categories;

@@ -1,8 +1,19 @@
-const initialState = {
-  records: [],
-  currentId: 0,
-}
+import { combineReducers } from 'redux';
+import { createAction, createReducer } from 'redux-act';
+import categories from '../constants/categories';
 
-const categories = (state = initialState, action) => state;
+export const loadCategories = createAction('load categories list');
+export const selectCategory = createAction('change current category');
 
-export default categories;
+const listReducer = createReducer({
+  [loadCategories]: (state) => categories,
+}, []);
+
+const currentReducer = createReducer({
+  [selectCategory]: (state, payload) => payload,
+}, 0)
+
+export default combineReducers({
+  list: listReducer,
+  current: currentReducer,
+});

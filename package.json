@@ -13,7 +13,8 @@
     "react-native": "0.43.4",
     "react-redux": "^5.0.4",
     "react-shallow-testutils": "^3.0.0",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-act": "^1.2.0"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",

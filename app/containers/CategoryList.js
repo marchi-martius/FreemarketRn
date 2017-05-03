@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import CategoryListView from '../components/CategoryListView';
-import { loadCategories } from '../actions/categories';
+import { loadCategories } from '../reducers/categories';
 
 mapStateToProps = (state) => ({
   categories: state.categories.records,
