@@ -1,5 +1,3 @@
-/* eslint react/jsx-filename-extension: 0 */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,

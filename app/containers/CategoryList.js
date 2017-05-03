@@ -1,3 +1,5 @@
+/* eslint react/prop-types: 0 */
+
 import React, { Component } from 'react';
 import { ListView } from 'react-native';
 
@@ -15,8 +17,8 @@ export default class CategoryList extends Component {
   }
 
   render() {
-    const { onPressCategory } = this.props;
     const renderRow = (rowData, _, rowID) => {
+      const { onPressCategory } = this.props;
       return <CategoryListRow {...{ rowData, rowID, onPressCategory }} />;
     };
 
