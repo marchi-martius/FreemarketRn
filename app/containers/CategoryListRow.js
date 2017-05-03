@@ -8,7 +8,7 @@ export default class CategoryListRow extends Component {
 
   render() {
     return (
-      <TouchableHighlight onPress={this.onPressCategory} >
+      <TouchableHighlight onPress={() => this.onPressCategory()} >
         <Text>{this.props.rowData.name}</Text>
       </TouchableHighlight>
     );
