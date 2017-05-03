@@ -1,17 +1,13 @@
+import React from 'react';
 import { AppRegistry } from 'react-native';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
 
-import rootReducer from './app/reducers'
-
-import AndroidApp from './app/components/AndroidApp';
-
-const store = createStore(rootReducer);
+import App from './app/containers/App';
+import Category from './app/components/Category.android';
 
 const FreemarketRn = () => (
-  <Provider store={store}>
-    <AndroidApp />
-  </Provider>
+  <App>
+    <Category />
+  </App>
 );
 export default FreemarketRn;
 

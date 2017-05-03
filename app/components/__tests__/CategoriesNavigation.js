@@ -2,10 +2,10 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import AndroidApp from '../AndroidApp';
+import CategoriesNavigation from '../CategoriesNavigation';
 
 it('renders correctly', () => {
-  const tree = renderer.create(<AndroidApp />).toJSON();
+  const tree = renderer.create(<CategoriesNavigation />).toJSON();
 
   expect(tree).toMatchSnapshot();
 });

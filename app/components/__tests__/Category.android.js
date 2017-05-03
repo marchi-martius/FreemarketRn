@@ -1,0 +1,11 @@
+import 'react-native';
+import React from 'react';
+import renderer from 'react-test-renderer';
+
+import Category from '../Category.android';
+
+it('renders correctly', () => {
+  const tree = renderer.create(<Category />).toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
