@@ -11,7 +11,7 @@ import {
 
 import ProductsList from './app/containers/ProductsList';
 import CategoriesList from './app/containers/CategoriesList';
-import { Categories } from './app/Constants';
+import Categories from './app/constants/Categories';
 
 export default class FreemarketRn extends Component {
   constructor() {

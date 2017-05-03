@@ -5,7 +5,8 @@ import renderer from 'react-test-renderer';
 import ProductsList from '../ProductsList';
 
 it('renders correctly', () => {
-  const tree = renderer.create(<ProductsList />).toJSON();
+  const category = { name: 'Home Decor' };
+  const tree = renderer.create(<ProductsList category={category} />).toJSON();
 
   expect(tree).toMatchSnapshot();
 });
