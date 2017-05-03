@@ -1,7 +1,6 @@
-import categoriesList from '../constants/categories'
-
 const initialState = {
-  records: categoriesList,
+  records: [],
+  currentId: 0,
 }
 
 const categories = (state = initialState, action) => state;

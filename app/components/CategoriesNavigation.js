@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-import categories from '../constants/categories';
-import CategoryList from './CategoryList';
+import CategoryList from '../containers/CategoryList';
 
 const styles = StyleSheet.create({
   base: {
@@ -14,10 +13,7 @@ const styles = StyleSheet.create({
 const CategoriesNavigation  = () => (
   <View style={styles.base}>
     <Text>Categories</Text>
-    <CategoryList
-      categories={categories}
-      onPressCategory={index => index}
-    />
+    <CategoryList />
   </View>
 );
 

@@ -7,9 +7,8 @@ import CategoryListRow from '../CategoryListRow';
 it('renders correctly', () => {
   const tree = renderer.create(
     <CategoryListRow
-      onPressCategory={() => true}
-      rowID="a"
-      rowData={{ name: 'Name' }}
+      onPress={() => true}
+      name="Item"
     />,
   ).toJSON();
 

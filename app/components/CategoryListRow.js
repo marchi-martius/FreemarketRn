@@ -3,16 +3,10 @@
 import React, { Component } from 'react';
 import { TouchableHighlight, Text } from 'react-native';
 
-export default class CategoryListRow extends Component {
-  onPressCategory() {
-    return this.props.onPressCategory(this.props.rowID);
-  }
+const CategoryListRow = ({onPress, name}) => (
+  <TouchableHighlight onPress={onPress} >
+    <Text>{name}</Text>
+  </TouchableHighlight>
+);
 
-  render() {
-    return (
-      <TouchableHighlight onPress={() => this.onPressCategory()} >
-        <Text>{this.props.rowData.name}</Text>
-      </TouchableHighlight>
-    );
-  }
-}
+export default CategoryListRow;
