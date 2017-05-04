@@ -1,8 +1,9 @@
-/* eslint react/prop-types: 0 */
+import { connect } from 'react-redux';
 
-import React from 'react';
-import { Text } from 'react-native';
+import ProductListView from '../components/ProductListView';
 
-export default function ProductList(props) {
-  return <Text>List of products go here for {props.category.name}</Text>;
-}
+const mapStateToProps = state => ({
+  category: state.categories.current,
+});
+
+export default connect(mapStateToProps)(ProductListView);

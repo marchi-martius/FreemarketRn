@@ -1,27 +1,14 @@
-/* eslint react/prop-types: 0 */
+import { connect } from 'react-redux';
 
-import React, { Component } from 'react';
-import { ListView } from 'react-native';
+import CategoryListView from '../components/CategoryListView';
+import { loadCategories } from '../reducers/categories';
 
-import CategoryListRow from './CategoryListRow';
-import categories from '../constants/categories';
+const mapStateToProps = state => ({
+  categories: state.categories.list,
+});
 
-export default class CategoryList extends Component {
-  constructor(props) {
-    super(props);
+const mapDispatchToProps = dispatch => ({
+  loadCategories: () => dispatch(loadCategories()),
+});
 
-    const ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2,
-    });
-    this.dataSource = ds.cloneWithRows(categories);
-  }
-
-  render() {
-    const renderRow = (rowData, _, rowID) => {
-      const { onPressCategory } = this.props;
-      return <CategoryListRow {...{ rowData, rowID, onPressCategory }} />;
-    };
-
-    return <ListView dataSource={this.dataSource} renderRow={renderRow} />;
-  }
-}
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryListView);
