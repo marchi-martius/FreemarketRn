@@ -14,13 +14,13 @@ const initialListState = {
   error: null,
 };
 const list = createReducer({
-  [requestCategories]: (state) => ({ ...state, completed: false }),
-  [categoriesSuccess]: (state, payload) => ({
+  [requestCategories]: state => ({ ...state, completed: false }),
+  [categoriesSuccess]: (state, records) => ({
     ...state,
-     completed: true,
-     records: payload,
+    records,
+    completed: true,
   }),
-  [categoriesError]: (state, error) => ({ ...state, error, completed: true})
+  [categoriesError]: (state, error) => ({ ...state, error, completed: true }),
 }, initialListState);
 
 const current = createReducer({

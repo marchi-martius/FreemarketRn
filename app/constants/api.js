@@ -1,1 +1,3 @@
-export const ENDPOINT = 'https://freemarketrn.firebaseio.com/';
+const ENDPOINT = 'https://freemarketrn.firebaseio.com/';
+
+export default ENDPOINT;

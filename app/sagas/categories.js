@@ -1,13 +1,13 @@
-import { put, call, takeAll } from 'redux-saga/effects';
+import { put, call, takeEvery } from 'redux-saga/effects';
 
 import {
   categoriesSuccess,
   categoriesError,
   requestCategories,
-} from '../reducers/categories'
-import { fetchAllCategories } from '../Api';
+} from '../reducers/categories';
+import fetchAllCategories from '../Api';
 
-export function *fetchCategories() {
+export function* fetchCategories() {
   try {
     const data = yield call(fetchAllCategories);
     const categories = data.json();
@@ -17,6 +17,6 @@ export function *fetchCategories() {
   }
 }
 
-export function *watchCategoriesRequest() {
-  yield takeAll(requestCategories.getType(), fetchCategories);
+export function* watchCategoriesRequest() {
+  yield takeEvery(requestCategories.getType(), fetchCategories);
 }
