@@ -1,6 +1,5 @@
-// import fetch from 'isomorphic-fetch';
-import ENDPOINT from './constants/api';
 import axios from 'axios';
+import ENDPOINT from './constants/api';
 
 const fetchAllCategories = () => axios.get(`${ENDPOINT}/categories.json`);
 

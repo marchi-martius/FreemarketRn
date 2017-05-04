@@ -7,7 +7,7 @@ import fetchAllCategories from '../../Api';
 describe('fetchCategories', () => {
   it('calls success action on resolve', () => {
     const gen = fetchCategories();
-    const categories = []
+    const categories = [];
     const response = { json: () => categories };
 
     expect(gen.next().value).toEqual(call(fetchAllCategories));
