@@ -13,7 +13,6 @@ export default class CategoryListView extends Component {
       rowHasChanged: (r1, r2) => r1.id !== r2.id,
     });
     this.dataSource = ds.cloneWithRows([]);
-    console.log(1111);
   }
 
   shouldComponentUpdate(nextProps) {

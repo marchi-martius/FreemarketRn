@@ -10,8 +10,8 @@ const listReducer = createReducer({
 }, []);
 
 const currentReducer = createReducer({
-  [selectCategory]: (state, payload) => payload,
-}, 0)
+  [selectCategory]: (state, category) => category,
+}, {id: -1, name: 'hi'})
 
 export default combineReducers({
   list: listReducer,
