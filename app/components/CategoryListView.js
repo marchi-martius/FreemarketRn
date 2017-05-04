@@ -15,11 +15,12 @@ export default class CategoryListView extends Component {
     this.dataSource = ds.cloneWithRows([]);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if(nextProps.categories.length != this.props.categories.length ||
-       nextProps.categories.map(cat => cat.id) !== this.props.categories.map(cat => cat.id)) {
-      this.dataSource.cloneWithRows(nextProps.categories);
-    }
+  shouldComponentUpdate(nextProps) {
+    return nextProps.categories.length !== this.props.categories.length || nextProps.categories.map(cat => cat.id) !== this.props.categories.map(cat => cat.id));
+  }
+
+  componentWillUpdate(nextProps) {
+    this.dataSource.cloneWithRows(nextProps.categories);
   }
 
   render() {
