@@ -9,8 +9,8 @@ import fetchAllCategories from '../Api';
 
 export function* fetchCategories() {
   try {
-    const data = yield call(fetchAllCategories);
-    const categories = data.json();
+    const response = yield call(fetchAllCategories);
+    const [_, ...categories] = response.data;
     yield put(categoriesSuccess(categories));
   } catch(e) {
     yield put(categoriesError(e));

@@ -9,6 +9,7 @@
     "lint": "eslint --ext .js app/ __tests__/ index.android.js"
   },
   "dependencies": {
+    "axios": "^0.16.1",
     "isomorphic-fetch": "^2.2.1",
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.4",
