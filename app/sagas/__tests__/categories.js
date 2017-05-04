@@ -8,7 +8,7 @@ describe('fetchCategories', () => {
   it('calls success action on resolve', () => {
     const gen = fetchCategories();
     const categories = [];
-    const response = { json: () => categories };
+    const response = { data: categories };
 
     expect(gen.next().value).toEqual(call(fetchAllCategories));
     expect(gen.next(response).value).toEqual(put(categoriesSuccess(categories)));
