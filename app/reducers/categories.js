@@ -11,7 +11,7 @@ const listReducer = createReducer({
 
 const currentReducer = createReducer({
   [selectCategory]: (state, category) => category,
-}, {id: -1, name: 'hi'})
+}, categories[0])
 
 export default combineReducers({
   list: listReducer,
