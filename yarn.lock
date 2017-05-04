@@ -2613,7 +2613,7 @@ jest-validate@^19.0.2:
     leven "^2.0.0"
     pretty-format "^19.0.0"
 
-jest@19.0.2:
+jest@^19.0.2:
   version "19.0.2"
   resolved "https://registry.yarnpkg.com/jest/-/jest-19.0.2.tgz#b794faaf8ff461e7388f28beef559a54f20b2c10"
   dependencies:
@@ -3615,6 +3615,10 @@ rechoir@^0.6.2:
 redux-act@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/redux-act/-/redux-act-1.2.0.tgz#bb0fb15f129edf0d45a241156a23828dda4bbd40"
+
+redux-saga@^0.15.1:
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.15.1.tgz#13db6b78d34ca9e77c983935143ec0ed1cfe34b5"
 
 redux@^3.6.0:
   version "3.6.0"

@@ -4,7 +4,11 @@ import reducer from '../categories';
 describe('initial state', () => {
   it('contains empty array of categories', () => {
     const initialState = reducer(undefined, {});
-    expect(initialState.list).toEqual([]);
+    expect(initialState.list).toEqual({
+      completed: true,
+      records: [],
+      error: null,
+    });
   });
 
   it('has current id set to 0', () => {

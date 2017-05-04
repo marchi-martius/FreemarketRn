@@ -8,7 +8,7 @@ const ProductListView = ({ category }) => (
 ProductListView.propTypes = {
   category: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    string: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
   }).isRequired,
 };
 
