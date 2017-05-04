@@ -4,7 +4,7 @@ import CategoryListRow from '../components/CategoryListRow';
 import { selectCategory } from '../reducers/categories';
 
 mapStateToProps = (state, ownProps) => {
-  const { id: currentId } = state.categories;
+  const id = state.categories.current;
   const { name } = ownProps;
 
   return { id, name };

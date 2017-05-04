@@ -4,7 +4,7 @@ import CategoryListView from '../components/CategoryListView';
 import { loadCategories } from '../reducers/categories';
 
 mapStateToProps = (state) => ({
-  categories: state.categories.records,
+  categories: state.categories.list,
 });
 
 mapDispatchToProps = (dispatch) => ({
