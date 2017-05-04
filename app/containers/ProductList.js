@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 
 import ProductListView from '../components/ProductListView';
 
-mapStateToProps = (state) => ({
-  category: state.categories.current
+const mapStateToProps = state => ({
+  category: state.categories.current,
 });
 
-export default connect(mapStateToProps)(ProductListView)
+export default connect(mapStateToProps)(ProductListView);

@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import CategoryListView from '../components/CategoryListView';
 import { loadCategories } from '../reducers/categories';
 
-mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   categories: state.categories.list,
 });
 
-mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   loadCategories: () => dispatch(loadCategories()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CategoryListView)
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryListView);

@@ -1,4 +1,4 @@
-import categories from '../../constants/categories'
+import categories from '../../constants/categories';
 import reducer from '../categories';
 
 describe('initial state', () => {

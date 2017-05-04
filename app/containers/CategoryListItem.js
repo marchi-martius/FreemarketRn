@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import CategoryListRow from '../components/CategoryListRow';
 import { selectCategory } from '../reducers/categories';
 
-mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   onPress: () => dispatch(selectCategory(ownProps)),
 });
 

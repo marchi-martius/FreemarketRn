@@ -6,12 +6,12 @@ export const loadCategories = createAction('load categories list');
 export const selectCategory = createAction('change current category');
 
 const listReducer = createReducer({
-  [loadCategories]: (state) => categories,
+  [loadCategories]: () => categories,
 }, []);
 
 const currentReducer = createReducer({
-  [selectCategory]: (state, category) => category,
-}, categories[0])
+  [selectCategory]: (_, category) => category,
+}, categories[0]);
 
 export default combineReducers({
   list: listReducer,

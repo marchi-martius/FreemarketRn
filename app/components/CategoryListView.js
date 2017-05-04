@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { ListView } from 'react-native';
 
 import CategoryListItem from '../containers/CategoryListItem';
@@ -16,7 +16,8 @@ export default class CategoryListView extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return nextProps.categories.length !== this.props.categories.length || nextProps.categories.map(cat => cat.id) !== this.props.categories.map(cat => cat.id);
+    return nextProps.categories.length !== this.props.categories.length ||
+      nextProps.categories.map(cat => cat.id) !== this.props.categories.map(cat => cat.id);
   }
 
   componentWillUpdate(nextProps) {
@@ -27,8 +28,16 @@ export default class CategoryListView extends Component {
     return (
       <ListView
         dataSource={this.dataSource}
-        renderRow={(row) => <CategoryListItem id={row.id} name={row.name} />}
+        renderRow={row => <CategoryListItem id={row.id} name={row.name} />}
       />
     );
   }
 }
+
+CategoryListView.propTypes = {
+  loadCategories: PropTypes.func.isRequired,
+  categories: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+  })).isRequired,
+};

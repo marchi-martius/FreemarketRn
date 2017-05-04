@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const CategoriesNavigation  = () => (
+const CategoriesNavigation = () => (
   <View style={styles.navigation}>
     <Text>Categories</Text>
     <CategoryList />
