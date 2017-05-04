@@ -5,16 +5,19 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "test-update-snapshot": "jest --updateSnapshot",
+    "test-update-snapshot": "jest --updateSnapsho t",
     "lint": "eslint --ext .js app/ __tests__/ index.android.js"
   },
   "dependencies": {
+    "axios": "^0.16.1",
+    "isomorphic-fetch": "^2.2.1",
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.4",
     "react-redux": "^5.0.4",
     "react-shallow-testutils": "^3.0.0",
     "redux": "^3.6.0",
-    "redux-act": "^1.2.0"
+    "redux-act": "^1.2.0",
+    "redux-saga": "^0.15.1"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",
@@ -26,7 +29,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
     "eslint-plugin-react-native": "^2.3.2",
-    "jest": "19.0.2",
+    "jest": "^19.0.2",
     "react-test-renderer": "16.0.0-alpha.6"
   },
   "jest": {
