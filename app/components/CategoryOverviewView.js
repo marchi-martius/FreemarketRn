@@ -1,5 +1,5 @@
 import React, { Children, PropTypes, cloneElement } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 /*
  *Passing category to all children as prop

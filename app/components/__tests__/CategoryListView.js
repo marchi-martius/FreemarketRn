@@ -8,7 +8,7 @@ it('renders successfully', () => {
   const tree = renderer.create(
     <CategoryListView
       categories={[]}
-      loadCategories={() => true} 
+      loadCategories={() => true}
       onCategoryPress={() => true}
     />,
   ).toJSON();

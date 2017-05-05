@@ -9,7 +9,7 @@ it('renders correctly', () => {
   const tree = renderer.create(
     <CategoryOverviewView category={categories[0]}>
       <Text>Hi</Text>
-    </CategoryOverviewView>
+    </CategoryOverviewView>,
   ).toJSON();
 
   expect(tree).toMatchSnapshot();
