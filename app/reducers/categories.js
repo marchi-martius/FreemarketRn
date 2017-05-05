@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
 import { createAction, createReducer } from 'redux-act';
-import categories from '../constants/categories';
 
 export const requestCategories = createAction('request categories from API');
 export const categoriesSuccess = createAction('categories loaded from API');
@@ -23,8 +22,12 @@ const list = createReducer({
   [categoriesError]: (state, error) => ({ ...state, error, completed: true }),
 }, initialListState);
 
+const initialCurrentState = {
+  id: -1,
+  name: '',
+};
 const current = createReducer({
   [selectCategory]: (_, category) => category,
-}, categories[0]);
+}, initialCurrentState);
 
 export default combineReducers({ list, current });
