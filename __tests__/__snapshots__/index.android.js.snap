@@ -19,7 +19,7 @@ exports[`renders correctly 1`] = `
     ellipsizeMode="tail"
   >
     List of products go here for 
-    Antiques
+    
   </Text>
 </View>
 `;
