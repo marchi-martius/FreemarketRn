@@ -1,4 +1,4 @@
-import { put, call, takeEvery } from 'redux-saga/effects';
+import { put, call, takeLatest } from 'redux-saga/effects';
 
 import {
   categoriesSuccess,
@@ -18,5 +18,5 @@ export function* fetchCategories() {
 }
 
 export function* watchCategoriesRequest() {
-  yield takeEvery(requestCategories.getType(), fetchCategories);
+  yield takeLatest(requestCategories.getType(), fetchCategories);
 }

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    category={
+      Object {
+        "id": 0,
+        "name": "Antiques",
+      }
+    }
+    ellipsizeMode="tail"
+  >
+    Hi
+  </Text>
+</View>
+`;

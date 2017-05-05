@@ -6,7 +6,11 @@ import CategoryListView from '../CategoryListView';
 
 it('renders successfully', () => {
   const tree = renderer.create(
-    <CategoryListView categories={[]} loadCategories={() => 'true'} />,
+    <CategoryListView
+      categories={[]}
+      loadCategories={() => true} 
+      onCategoryPress={() => true}
+    />,
   ).toJSON();
 
   expect(tree).toMatchSnapshot();
