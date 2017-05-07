@@ -20,7 +20,7 @@ class CategoryHeader extends Component {
   }
 
   componentWillMount() {
-    Icon.getImageSource('android', 20, 'red').then((source) => this.setState({ icon: source }));
+    Icon.getImageSource('bars', 30, 'white').then((source) => this.setState({ icon: source }));
   }
 
   render() {
