@@ -22,8 +22,12 @@ const Main = () => (
   <DrawerLayoutAndroid
     drawerWidth={300}
     renderNavigationView={() => <CategoriesNavigation />}
+    ref={(_drawer) => { this.drawer = _drawer }}
   >
-    <CategoryOverview platform="android" />
+    <CategoryOverview
+      platform="android"
+      openDrawer={() => this.drawer.openDrawer()} 
+    />
   </DrawerLayoutAndroid>
 );
 

@@ -4,9 +4,9 @@ import { View } from 'react-native';
 
 import CategoryHeaderAndroid from './CategoryHeader.android';
 
-const CategoryOverviewView = ({ category, platform }) => (
+const CategoryOverviewView = ({ category, platform, openDrawer }) => (
   <View>
-    {platform === 'android' ? <CategoryHeaderAndroid category={category} /> : null}
+    {platform === 'android' ? <CategoryHeaderAndroid category={category} openDrawer={openDrawer} /> : null}
   </View>
 );
 
