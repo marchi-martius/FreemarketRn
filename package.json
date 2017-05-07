@@ -11,10 +11,10 @@
   "dependencies": {
     "axios": "^0.16.1",
     "isomorphic-fetch": "^2.2.1",
+    "prop-types": "^15.5.8",
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.4",
     "react-redux": "^5.0.4",
-    "react-shallow-testutils": "^3.0.0",
     "redux": "^3.6.0",
     "redux-act": "^1.2.0",
     "redux-saga": "^0.15.1"

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import CategoryListView from '../components/CategoryListView';
-import { requestCategories } from '../reducers/categories';
+import { requestCategories, selectCategory } from '../reducers/categories';
 
 const mapStateToProps = state => ({
   categories: state.categories.list.records,
@@ -9,6 +9,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   loadCategories: () => dispatch(requestCategories()),
+  onCategoryPress: category => dispatch(selectCategory(category)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryListView);

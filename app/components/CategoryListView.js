@@ -1,7 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { ListView } from 'react-native';
 
-import CategoryListItem from '../containers/CategoryListItem';
+import CategoryListRow from '../components/CategoryListRow';
 
 export default class CategoryListView extends Component {
   constructor(props) {
@@ -25,19 +26,21 @@ export default class CategoryListView extends Component {
   }
 
   render() {
-    return (
-      <ListView
-        dataSource={this.dataSource}
-        renderRow={row => <CategoryListItem id={row.id} name={row.name} />}
-      />
+    const { dataSource } = this;
+    const { onCategoryPress } = this.props;
+    const renderRow = row => (
+      <CategoryListRow onPress={() => onCategoryPress(row)} name={row.name} />
     );
+
+    return <ListView {...{ dataSource, renderRow }} />;
   }
 }
 
 CategoryListView.propTypes = {
-  loadCategories: PropTypes.func.isRequired,
   categories: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
   })).isRequired,
+  loadCategories: PropTypes.func.isRequired,
+  onCategoryPress: PropTypes.func.isRequired,
 };

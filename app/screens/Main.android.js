@@ -1,8 +1,8 @@
 import React from 'react';
 import { DrawerLayoutAndroid, View, Text, StyleSheet } from 'react-native';
 
-import ProductList from '../containers/ProductList';
 import CategoryList from '../containers/CategoryList';
+import CategoryOverview from '../containers/CategoryOverview';
 
 const styles = StyleSheet.create({
   navigation: {
@@ -23,7 +23,7 @@ const Main = () => (
     drawerWidth={300}
     renderNavigationView={() => <CategoriesNavigation />}
   >
-    <ProductList />
+    <CategoryOverview platform="android" />
   </DrawerLayoutAndroid>
 );
 
