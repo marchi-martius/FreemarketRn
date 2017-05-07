@@ -1,4 +1,4 @@
-import { Text } from 'react-native';
+import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
@@ -7,9 +7,7 @@ import categories from '../../constants/categories';
 
 it('renders correctly', () => {
   const tree = renderer.create(
-    <CategoryOverviewView category={categories[0]}>
-      <Text>Hi</Text>
-    </CategoryOverviewView>,
+    <CategoryOverviewView category={categories[0]} platform="android" />,
   ).toJSON();
 
   expect(tree).toMatchSnapshot();

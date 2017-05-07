@@ -1,21 +1,22 @@
-import React, { Children, PropTypes, cloneElement } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
-/*
- *Passing category to all children as prop
- */
-const CategoryOverviewView = ({ category, children }) => (
+import CategoryHeaderAndroid from './CategoryHeader.android';
+
+const CategoryOverviewView = ({ category, platform }) => (
   <View>
-    {Children.map(children, child => cloneElement(child, { category }))}
+    {platform === 'android' ? <CategoryHeaderAndroid category={category} /> : null}
   </View>
 );
+
 
 CategoryOverviewView.propTypes = {
   category: PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string,
   }).isRequired,
-  children: PropTypes.node.isRequired,
+  platform: PropTypes.oneOf(['android', 'ios']).isRequired,
 };
 
 export default CategoryOverviewView;
