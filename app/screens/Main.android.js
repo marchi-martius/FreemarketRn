@@ -7,7 +7,6 @@ import CategoryOverview from '../containers/CategoryOverview';
 const styles = StyleSheet.create({
   navigation: {
     flex: 1,
-    alignItems: 'center',
   },
 });
 
@@ -26,7 +25,7 @@ const Main = () => (
   >
     <CategoryOverview
       platform="android"
-      openDrawer={() => this.drawer.openDrawer()} 
+      openDrawer={() => this.drawer.openDrawer()}
     />
   </DrawerLayoutAndroid>
 );
