@@ -12,13 +12,14 @@ const styles = StyleSheet.create({
   text: {
     height: 40,
     fontSize: 18,
+    paddingLeft: 10
   }
 });
 
 const CategoryListRow = ({ onPress, name }) => (
   <TouchableHighlight onPress={onPress} >
     <View style={styles.row}>
-      <Icon name="book" size={18} color="black" />
+      <Icon name="book" size={24} color="darkgray" />
       <Text style={styles.text}>{name}</Text>
     </View>
   </TouchableHighlight>
