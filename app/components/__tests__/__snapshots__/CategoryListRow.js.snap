@@ -27,12 +27,52 @@ exports[`renders correctly 1`] = `
   testID={undefined}
   tvParallaxProperties={undefined}
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "flex": 1,
+        "flexDirection": "row",
+        "paddingLeft": 10,
+        "paddingTop": 10,
+      }
+    }
   >
-    Item
-  </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "darkgray",
+            "fontSize": 24,
+          },
+          undefined,
+          Object {
+            "fontFamily": "FontAwesome",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 18,
+          "height": 40,
+          "paddingLeft": 10,
+        }
+      }
+    >
+      Item
+    </Text>
+  </View>
 </View>
 `;
