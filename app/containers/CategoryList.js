@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   loadCategories: () => dispatch(requestCategories()),
-  onCategoryPress: category => {
+  onCategoryPress: (category) => {
     dispatch(selectCategory(category));
     ownProps.afterCategoryPress();
   },

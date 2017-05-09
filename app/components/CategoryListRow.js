@@ -2,21 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, TouchableHighlight, Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import colors from '../constants/colors';
 
-const textColor = "white";
 const styles = StyleSheet.create({
   row: {
     flex: 1,
     flexDirection: 'row',
-    backgroundColor: 'white',
+    backgroundColor: colors.headerText,
     paddingTop: 10,
-    paddingLeft: 10
+    paddingLeft: 10,
   },
   text: {
     height: 40,
     fontSize: 18,
-    paddingLeft: 10
-  }
+    paddingLeft: 10,
+  },
 });
 
 const CategoryListRow = ({ onPress, name, icon }) => (

@@ -17,6 +17,7 @@ CategoryOverviewView.propTypes = {
     name: PropTypes.string,
   }).isRequired,
   platform: PropTypes.oneOf(['android', 'ios']).isRequired,
+  onHeaderIconClicked: PropTypes.func.isRequired,
 };
 
 export default CategoryOverviewView;
