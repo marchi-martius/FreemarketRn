@@ -38,7 +38,7 @@ const Main = () => (
   >
     <CategoryOverview
       platform="android"
-      openDrawer={() => this.drawer.openDrawer()}
+      onHeaderIconClicked={() => this.drawer.openDrawer()}
     />
   </DrawerLayoutAndroid>
 );

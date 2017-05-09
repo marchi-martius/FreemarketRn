@@ -30,7 +30,7 @@ class CategoryHeader extends Component {
     return (
       <ToolbarAndroid
         navIcon={icon}
-        onIconClicked={() => this.props.openDrawer()}
+        onIconClicked={() => this.props.onIconClicked()}
         title={this.props.category.name}
         style={styles.toolbar}
         titleColor="white"
