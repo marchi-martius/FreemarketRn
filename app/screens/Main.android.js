@@ -8,11 +8,20 @@ const styles = StyleSheet.create({
   navigation: {
     flex: 1,
   },
+  title: {
+    // flex: 1,
+    height: 100,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "dodgerblue"
+  }
 });
 
 const CategoriesNavigation = () => (
   <View style={styles.navigation}>
-    <Text>Categories</Text>
+    <View style={styles.title}>
+      <Text>Categories</Text>
+    </View>
     <CategoryList />
   </View>
 );
