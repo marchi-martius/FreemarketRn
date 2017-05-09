@@ -8,19 +8,23 @@ const styles = StyleSheet.create({
   navigation: {
     flex: 1,
   },
-  title: {
-    // flex: 1,
+  titleBlock: {
     height: 100,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "dodgerblue"
+    backgroundColor: "dodgerblue",
+    marginBottom: 10,
+  },
+  title: {
+    fontSize: 30,
+    color: 'white',
   }
 });
 
 const CategoriesNavigation = () => (
   <View style={styles.navigation}>
-    <View style={styles.title}>
-      <Text>Categories</Text>
+    <View style={styles.titleBlock}>
+      <Text style={styles.title}>Categories</Text>
     </View>
     <CategoryList />
   </View>
