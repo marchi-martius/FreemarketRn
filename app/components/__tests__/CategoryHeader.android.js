@@ -7,7 +7,7 @@ import categories from '../../constants/categories';
 
 it('renders correctly', () => {
   const tree = renderer.create(
-    <CategoryHeader category={categories[0]} />,
+    <CategoryHeader category={categories[0]} onIconClicked={() => {}} />,
   ).toJSON();
 
   expect(tree).toMatchSnapshot();

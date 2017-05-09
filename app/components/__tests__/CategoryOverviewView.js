@@ -7,7 +7,11 @@ import categories from '../../constants/categories';
 
 it('renders correctly', () => {
   const tree = renderer.create(
-    <CategoryOverviewView category={categories[0]} platform="android" />,
+    <CategoryOverviewView
+      category={categories[0]}
+      platform="android"
+      onHeaderIconClicked={() => {}}
+    />,
   ).toJSON();
 
   expect(tree).toMatchSnapshot();

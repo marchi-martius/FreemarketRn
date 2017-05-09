@@ -39,7 +39,11 @@ CategoriesNavigation.propTypes = {
 const Main = () => (
   <DrawerLayoutAndroid
     drawerWidth={300}
-    renderNavigationView={() => <CategoriesNavigation afterCategoryPress={ () => this.drawer.closeDrawer() } />}
+    renderNavigationView={() =>
+      <CategoriesNavigation
+        afterCategoryPress={() => this.drawer.closeDrawer()}
+      />
+    }
     ref={(_drawer) => { this.drawer = _drawer; }}
   >
     <CategoryOverview
