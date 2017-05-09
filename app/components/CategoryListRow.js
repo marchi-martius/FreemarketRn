@@ -19,10 +19,10 @@ const styles = StyleSheet.create({
   }
 });
 
-const CategoryListRow = ({ onPress, name }) => (
+const CategoryListRow = ({ onPress, name, icon }) => (
   <TouchableHighlight onPress={onPress} >
     <View style={styles.row}>
-      <Icon name="book" size={24} color="darkgray" />
+      <Icon name={icon} size={24} color="darkgray" />
       <Text style={styles.text}>{name}</Text>
     </View>
   </TouchableHighlight>
@@ -30,6 +30,7 @@ const CategoryListRow = ({ onPress, name }) => (
 
 CategoryListRow.propTypes = {
   name: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
 };
 
