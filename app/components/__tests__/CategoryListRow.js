@@ -9,6 +9,7 @@ it('renders correctly', () => {
     <CategoryListRow
       onPress={() => true}
       name="Item"
+      icon="book"
     />,
   ).toJSON();
 
