@@ -21,19 +21,19 @@ const styles = StyleSheet.create({
   }
 });
 
-const CategoriesNavigation = () => (
+const CategoriesNavigation = ({afterCategoryPress}) => (
   <View style={styles.navigation}>
     <View style={styles.titleBlock}>
       <Text style={styles.title}>Categories</Text>
     </View>
-    <CategoryList />
+    <CategoryList afterCategoryPress={afterCategoryPress} />
   </View>
 );
 
 const Main = () => (
   <DrawerLayoutAndroid
     drawerWidth={300}
-    renderNavigationView={() => <CategoriesNavigation />}
+    renderNavigationView={() => <CategoriesNavigation afterCategoryPress={ () => this.drawer.closeDrawer() } />}
     ref={(_drawer) => { this.drawer = _drawer }}
   >
     <CategoryOverview
