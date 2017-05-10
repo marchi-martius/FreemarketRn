@@ -7,9 +7,9 @@ const mapStateToProps = state => ({
   categories: state.categories.list.records,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = dispatch => ({
   loadCategories: () => dispatch(requestCategories()),
-  onCategoryPress: category => dispatch(selectCategory(category))
+  onCategoryPress: category => dispatch(selectCategory(category)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryListView);
