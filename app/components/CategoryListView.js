@@ -34,7 +34,7 @@ export default class CategoryListView extends Component {
   render() {
     const { dataSource } = this;
     const renderRow = row => (
-      <CategoryListRow onPress={() => this.onPress(row)} name={row.name} icon={row.icon} />
+      <CategoryListRow onPress={() => this.onPress(row)} name={row.name} iconName={row.icon} />
     );
 
     return <ListView {...{ dataSource, renderRow }} />;
