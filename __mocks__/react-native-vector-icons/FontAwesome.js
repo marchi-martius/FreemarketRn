@@ -1,8 +1,5 @@
-import React from 'react';
-
-function mockComponent(name: string): Function {
-  return (props: Object) => React.createElement(name, props, props.children);
-}
+/* @flow */
+import mockComponent from 'mockComponent';
 
 const Icon = mockComponent('Icon');
 Icon.ToolbarAndroid = mockComponent('Icon.ToolbarAndroid');
