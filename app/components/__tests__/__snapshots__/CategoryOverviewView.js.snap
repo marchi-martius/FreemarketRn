@@ -2,20 +2,17 @@
 
 exports[`renders correctly 1`] = `
 <View>
-  <View
+  <Icon.Button
+    navIconName="bars"
+    onIconClicked={[Function]}
     style={
-      Array [
-        Object {
-          "alignSelf": "flex-start",
-          "borderColor": "red",
-          "borderWidth": 1,
-        },
-        Object {
-          "backgroundColor": "dodgerblue",
-          "height": 56,
-        },
-      ]
+      Object {
+        "backgroundColor": "dodgerblue",
+        "height": 56,
+      }
     }
+    title="Antiques"
+    titleColor="white"
   />
 </View>
 `;

@@ -1,11 +1,12 @@
-import Icon from 'react-native-vector-icons/FontAwesome';
+import React from 'react';
 
-Icon.getImageSource = () => {
-  return {
-    then: (func) => {
-      func(require('./img/some_icon.png'));
-    }
-  }
-};
+function mockComponent(name: string): Function {
+  return (props: Object) => React.createElement(name, props, props.children);
+}
+
+const Icon = mockComponent('Icon');
+Icon.ToolbarAndroid = mockComponent('Icon.Button');
 
 export default Icon;
+
+export const ToolbarAndroid = Icon.ToolbarAndroid;

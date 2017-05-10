@@ -38,27 +38,11 @@ exports[`renders correctly 1`] = `
       }
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={false}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "darkgray",
-            "fontSize": 24,
-          },
-          undefined,
-          Object {
-            "fontFamily": "FontAwesome",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-        ]
-      }
-    >
-      
-    </Text>
+    <Icon
+      color="darkgray"
+      name="book"
+      size={24}
+    />
     <Text
       accessible={true}
       allowFontScaling={true}

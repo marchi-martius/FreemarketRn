@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, ToolbarAndroid } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { StyleSheet } from 'react-native';
+import { ToolbarAndroid } from 'react-native-vector-icons/FontAwesome';
 import colors from '../constants/colors';
 
 const styles = StyleSheet.create({
@@ -10,8 +10,9 @@ const styles = StyleSheet.create({
     backgroundColor: colors.toolbar,
   },
 });
+
 const CategoryHeader = ({ category, onIconClicked }) => (
-  <Icon.ToolbarAndroid
+  <ToolbarAndroid
     title={category.name}
     titleColor={colors.headerText}
     navIconName={'bars'}
