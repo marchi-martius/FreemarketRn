@@ -5,7 +5,7 @@ function mockComponent(name: string): Function {
 }
 
 const Icon = mockComponent('Icon');
-Icon.ToolbarAndroid = mockComponent('Icon.Button');
+Icon.ToolbarAndroid = mockComponent('Icon.ToolbarAndroid');
 
 export default Icon;
 

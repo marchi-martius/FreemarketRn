@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <View>
-  <Icon.Button
+  <Icon.ToolbarAndroid
     navIconName="bars"
     onIconClicked={[Function]}
     style={
