@@ -10,34 +10,15 @@ const styles = StyleSheet.create({
     backgroundColor: colors.toolbar,
   },
 });
-
-class CategoryHeader extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      icon: null,
-    };
-  }
-
-  componentWillMount() {
-    Icon.getImageSource('bars', 22, colors.headerText).then(source => this.setState({ icon: source }));
-  }
-
-  render() {
-    const { icon } = this.state;
-    if (!icon) return null;
-
-    return (
-      <ToolbarAndroid
-        navIcon={icon}
-        onIconClicked={() => this.props.onIconClicked()}
-        title={this.props.category.name}
-        style={styles.toolbar}
-        titleColor={colors.headerText}
-      />
-    );
-  }
-}
+const CategoryHeader = ({ category, onIconClicked }) => (
+  <Icon.ToolbarAndroid
+    title={category.name}
+    titleColor={colors.headerText}
+    navIconName={'bars'}
+    onIconClicked={() => onIconClicked()}
+    style={styles.toolbar}
+  />
+);
 
 CategoryHeader.propTypes = {
   category: PropTypes.shape({
