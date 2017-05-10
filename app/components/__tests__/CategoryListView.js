@@ -10,6 +10,7 @@ it('renders successfully', () => {
       categories={[]}
       loadCategories={() => true}
       onCategoryPress={() => true}
+      afterCategoryPress={() => true}
     />,
   ).toJSON();
 
