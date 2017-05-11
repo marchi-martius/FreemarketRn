@@ -4,9 +4,9 @@ import { View } from 'react-native';
 
 import CategoryHeaderAndroid from './CategoryHeader.android';
 
-const CategoryOverviewView = ({ category, platform }) => (
+const CategoryOverviewView = ({ category, platform, onHeaderIconClicked }) => (
   <View>
-    {platform === 'android' ? <CategoryHeaderAndroid category={category} /> : null}
+    {platform === 'android' ? <CategoryHeaderAndroid category={category} onIconClicked={onHeaderIconClicked} /> : null}
   </View>
 );
 
@@ -17,6 +17,7 @@ CategoryOverviewView.propTypes = {
     name: PropTypes.string,
   }).isRequired,
   platform: PropTypes.oneOf(['android', 'ios']).isRequired,
+  onHeaderIconClicked: PropTypes.func.isRequired,
 };
 
 export default CategoryOverviewView;

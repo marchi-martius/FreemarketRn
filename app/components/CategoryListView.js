@@ -25,11 +25,16 @@ export default class CategoryListView extends Component {
     this.dataSource = this.dataSource.cloneWithRows(nextProps.categories);
   }
 
+  onPress(row) {
+    const { onCategoryPress, afterCategoryPress } = this.props;
+    onCategoryPress(row);
+    afterCategoryPress();
+  }
+
   render() {
     const { dataSource } = this;
-    const { onCategoryPress } = this.props;
     const renderRow = row => (
-      <CategoryListRow onPress={() => onCategoryPress(row)} name={row.name} />
+      <CategoryListRow onPress={() => this.onPress(row)} name={row.name} iconName={row.icon} />
     );
 
     return <ListView {...{ dataSource, renderRow }} />;
@@ -43,4 +48,5 @@ CategoryListView.propTypes = {
   })).isRequired,
   loadCategories: PropTypes.func.isRequired,
   onCategoryPress: PropTypes.func.isRequired,
+  afterCategoryPress: PropTypes.func.isRequired,
 };

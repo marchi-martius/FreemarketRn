@@ -1,19 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<View
+<Icon.ToolbarAndroid
+  navIconName="bars"
+  onIconClicked={[Function]}
   style={
-    Array [
-      Object {
-        "alignSelf": "flex-start",
-        "borderColor": "red",
-        "borderWidth": 1,
-      },
-      Object {
-        "backgroundColor": "dodgerblue",
-        "height": 56,
-      },
-    ]
+    Object {
+      "backgroundColor": "dodgerblue",
+      "height": 56,
+    }
   }
+  title="Antiques"
+  titleColor="white"
 />
 `;
