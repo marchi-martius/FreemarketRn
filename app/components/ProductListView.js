@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ListView, Text, StyleSheet } from 'react-native';
+import { ListView, StyleSheet } from 'react-native';
 
 import ProductListRow from '../components/ProductListRow';
 
@@ -30,7 +30,7 @@ export default class ProductListView extends Component {
       <ListView
         style={styles.listView}
         dataSource={this.dataSource}
-        renderRow={(row) => this.renderRow(row)}
+        renderRow={row => this.renderRow(row)}
       />
     );
   }

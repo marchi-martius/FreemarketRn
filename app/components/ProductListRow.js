@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 5,
     flexDirection: 'row',
-    padding: ident
+    padding: ident,
   },
   image: {
     width: 100,
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   },
   name: {
     color: 'black',
-    fontSize: 15
+    fontSize: 15,
   },
   numbersBlock: {
     flexDirection: 'row',
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
 
   },
   timeTitle: {
-    fontSize: 10
+    fontSize: 10,
   },
   timeValue: {
     color: 'red',
@@ -48,14 +48,14 @@ const styles = StyleSheet.create({
   },
   price: {
     color: 'white',
-  }
+  },
 });
 
 const ProductListRow = ({ name, image, price }) => (
   <View style={styles.row}>
     <Image
       style={styles.image}
-      source={{uri: image}}
+      source={{ uri: image }}
     />
     <View style={styles.descriptionBlock}>
       <Text style={styles.name}>{name}</Text>
