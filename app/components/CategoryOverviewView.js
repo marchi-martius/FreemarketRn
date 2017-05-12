@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
 import CategoryHeaderAndroid from './CategoryHeader.android';
+import ProductList from '../containers/ProductList';
 
 const CategoryOverviewView = ({ category, platform, onHeaderIconClicked }) => (
   <View>
     {platform === 'android' ? <CategoryHeaderAndroid category={category} onIconClicked={onHeaderIconClicked} /> : null}
+    <ProductList />
   </View>
 );
 
