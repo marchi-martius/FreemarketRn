@@ -65,7 +65,7 @@ const ProductListRow = ({ name, image, price }) => (
           <Text style={styles.timeValue}>17m 5s</Text>
         </View>
         <View style={styles.priceBlock}>
-          <Text style={styles.price}>${price}</Text>
+          <Text style={styles.price}>${price.toFixed(2)}</Text>
         </View>
       </View>
     </View>

@@ -9,6 +9,4 @@ const mapStateToProps = state => ({
   products: products,
 });
 
-// const ProductListView = () => <Text>Wtf</Text>;
-
 export default connect(mapStateToProps)(ProductListView);

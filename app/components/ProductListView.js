@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ListView, Text } from 'react-native';
+import { ListView, Text, StyleSheet } from 'react-native';
 
 import ProductListRow from '../components/ProductListRow';
+
+const styles = StyleSheet.create({
+  listView: {
+    backgroundColor: 'dimgray',
+  },
+});
 
 export default class ProductListView extends Component {
   constructor(props) {
@@ -22,7 +28,7 @@ export default class ProductListView extends Component {
   render() {
     return (
       <ListView
-        style={{backgroundColor: 'dimgray'}}
+        style={styles.listView}
         dataSource={this.dataSource}
         renderRow={(row) => this.renderRow(row)}
       />
