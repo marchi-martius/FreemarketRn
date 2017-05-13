@@ -1,10 +1,14 @@
 import { connect } from 'react-redux';
 import ProductListView from '../components/ProductListView';
-import products from '../constants/products';
+import { requestProducts } from '../reducers/products'
 
 
 const mapStateToProps = state => ({
-  products: products,
+  products: state.products.list.records,
 });
 
-export default connect(mapStateToProps)(ProductListView);
+const mapDispatchToProps = dispatch => ({
+  loadProducts: () => dispatch(requestProducts()),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductListView);
