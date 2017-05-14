@@ -8,7 +8,7 @@ import CategoryOverviewView from '../CategoryOverviewView';
 import categories from '../../constants/categories';
 
 it('renders correctly', () => {
-  const store = configureStore()({products: {list: {records: []}}});
+  const store = configureStore()({ products: { list: { records: [] } } });
   const tree = renderer.create(
     <Provider store={store}>
       <CategoryOverviewView

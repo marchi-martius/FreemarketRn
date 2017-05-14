@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
+import colors from '../constants/colors';
+
 const ident = 10;
 const styles = StyleSheet.create({
   row: {
     margin: ident,
-    backgroundColor: 'white',
+    backgroundColor: colors.productBackground,
     borderRadius: 5,
     flexDirection: 'row',
     padding: ident,
@@ -22,7 +24,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   name: {
-    color: 'black',
+    color: colors.textDark,
     fontSize: 15,
   },
   numbersBlock: {
@@ -36,18 +38,18 @@ const styles = StyleSheet.create({
     fontSize: 10,
   },
   timeValue: {
-    color: 'red',
+    color: colors.textAttention,
     fontSize: 15,
   },
   priceBlock: {
-    backgroundColor: 'dimgray',
+    backgroundColor: colors.priceBackground,
     width: 100,
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
   },
   price: {
-    color: 'white',
+    color: colors.textLight,
   },
 });
 

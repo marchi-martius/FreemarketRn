@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 import { FlatList, StyleSheet } from 'react-native';
 
 import ProductListRow from '../components/ProductListRow';
+import colors from '../constants/colors';
 
 const styles = StyleSheet.create({
   listView: {
-    backgroundColor: 'dimgray',
+    backgroundColor: colors.productsBackground,
   },
 });
 
 export default class ProductListView extends Component {
+  static renderRow(row) {
+    const { name, image, price } = row;
+    return <ProductListRow {...{ name, image, price }} />;
+  }
   constructor(props) {
     super(props);
     props.loadProducts();
-  }
-
-  renderRow(row) {
-    const { name, image, price } = row;
-    return <ProductListRow {...{ name, image, price }} />;
   }
 
   render() {
@@ -26,7 +26,7 @@ export default class ProductListView extends Component {
       <FlatList
         style={styles.listView}
         data={this.props.products}
-        renderItem={({item}) => this.renderRow(item)}
+        renderItem={({ item }) => this.constructor.renderRow(item)}
       />
     );
   }
@@ -39,4 +39,5 @@ ProductListView.propTypes = {
     image: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
   })).isRequired,
+  loadProducts: PropTypes.func.isRequired,
 };

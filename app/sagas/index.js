@@ -6,6 +6,6 @@ import { watchProductsRequest } from './products';
 export default function* rootSaga() {
   yield all([
     watchCategoriesRequest(),
-    watchProductsRequest()
+    watchProductsRequest(),
   ]);
 }
