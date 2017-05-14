@@ -2,18 +2,34 @@
 
 exports[`renders successfully 1`] = `
 <RCTScrollView
-  dataSource={
-    ListViewDataSource {
-      "items": 0,
-    }
-  }
-  renderRow={[Function]}
+  data={Array []}
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  numColumns={1}
+  onContentSizeChange={[Function]}
+  onEndReached={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onViewableItemsChanged={undefined}
+  removeClippedSubviews={true}
+  renderItem={[Function]}
   renderScrollComponent={[Function]}
+  scrollEventThrottle={50}
+  shouldItemUpdate={[Function]}
   style={
     Object {
       "backgroundColor": "dimgray",
     }
   }
+  updateCellsBatchingPeriod={50}
+  windowSize={21}
 >
   <View />
 </RCTScrollView>

@@ -2,7 +2,7 @@ import { call, put } from 'redux-saga/effects';
 
 import { fetchCategories } from '../categories';
 import { categoriesSuccess, categoriesError } from '../../reducers/categories';
-import fetchAllCategories from '../../Api';
+import { fetchAllCategories } from '../../Api';
 
 describe('fetchCategories', () => {
   it('calls success action on resolve', () => {

@@ -8,6 +8,7 @@ it('renders successfully', () => {
   const tree = renderer.create(
     <ProductListView
       products={[]}
+      loadProducts={() => true}
     />,
   ).toJSON();
 
