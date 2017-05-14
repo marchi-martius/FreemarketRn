@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ListView, StyleSheet } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 
 import ProductListRow from '../components/ProductListRow';
 
@@ -13,21 +13,7 @@ const styles = StyleSheet.create({
 export default class ProductListView extends Component {
   constructor(props) {
     super(props);
-
     props.loadProducts();
-
-    const ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1.id !== r2.id,
-    });
-    this.dataSource = ds.cloneWithRows([]);
-  }
-
-  shouldComponentUpdate(nextProps) {
-    return nextProps.products !== this.props.products;
-  }
-
-  componentWillUpdate(nextProps) {
-    this.dataSource = this.dataSource.cloneWithRows(nextProps.products);
   }
 
   renderRow(row) {
@@ -37,10 +23,10 @@ export default class ProductListView extends Component {
 
   render() {
     return (
-      <ListView
+      <FlatList
         style={styles.listView}
-        dataSource={this.dataSource}
-        renderRow={row => this.renderRow(row)}
+        data={this.props.products}
+        renderItem={({item}) => this.renderRow(item)}
       />
     );
   }
