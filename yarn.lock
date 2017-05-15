@@ -1520,13 +1520,19 @@ eslint-config-airbnb@^14.1.0:
   dependencies:
     eslint-config-airbnb-base "^11.1.0"
 
-eslint-import-resolver-node@^0.2.0:
+eslint-import-resolver-node@^0.2.0, eslint-import-resolver-node@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.2.3.tgz#5add8106e8c928db2cba232bcd9efa846e3da16c"
   dependencies:
     debug "^2.2.0"
     object-assign "^4.0.1"
     resolve "^1.1.6"
+
+eslint-import-resolver-react-native@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-import-resolver-react-native/-/eslint-import-resolver-react-native-0.0.1.tgz#eff3b1c2d1ed05f3151cf4db25e333832629e69d"
+  dependencies:
+    eslint-import-resolver-node "^0.2.3"
 
 eslint-module-utils@^2.0.0:
   version "2.0.0"

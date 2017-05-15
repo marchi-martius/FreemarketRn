@@ -18,5 +18,8 @@ module.exports = {
   },
   "rules": {
     "react/jsx-filename-extension": 0
+  },
+  "settings": {
+    "import/resolver": "react-native"
   }
 };
