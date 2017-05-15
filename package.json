@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
+    "test": "jest --no-cache",
     "test:update-snapshot": "jest --updateSnapshot",
     "lint": "eslint --ext .js app/ __tests__/ index.android.js"
   },
