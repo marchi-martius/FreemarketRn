@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const CategoryHeader = ({ category, onIconClicked }) => (
+const CategoryHeaderView = ({ category, onIconClicked }) => (
   <ToolbarAndroid
     title={category.name}
     titleColor={colors.headerText}
@@ -21,11 +21,11 @@ const CategoryHeader = ({ category, onIconClicked }) => (
   />
 );
 
-CategoryHeader.propTypes = {
+CategoryHeaderView.propTypes = {
   category: PropTypes.shape({
     name: PropTypes.string.isRequired,
   }).isRequired,
   onIconClicked: PropTypes.func.isRequired,
 };
 
-export default CategoryHeader;
+export default CategoryHeaderView;

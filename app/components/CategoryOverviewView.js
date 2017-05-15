@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
-import CategoryHeaderAndroid from './CategoryHeader.android';
+import CategoryHeader from './CategoryHeader.android';
 import ProductList from '../containers/ProductList';
 
 const CategoryOverviewView = ({ category, platform, onHeaderIconClicked }) => (
   <View>
-    {platform === 'android' ? <CategoryHeaderAndroid category={category} onIconClicked={onHeaderIconClicked} /> : null}
+    <CategoryHeaderAndroid category={category} onIconClicked={onHeaderIconClicked} />
     <ProductList />
   </View>
 );
@@ -18,7 +18,6 @@ CategoryOverviewView.propTypes = {
     id: PropTypes.number,
     name: PropTypes.string,
   }).isRequired,
-  platform: PropTypes.oneOf(['android', 'ios']).isRequired,
   onHeaderIconClicked: PropTypes.func.isRequired,
 };
 
