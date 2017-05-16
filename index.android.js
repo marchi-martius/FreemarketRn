@@ -9,8 +9,8 @@ import ProductForm from './app/screens/ProductForm';
 const FreemarketRn = () => (
   <App>
     <Router>
-      <Scene key="ProductIndex" component={Main} hideNavBar />
-      <Scene key="ProductForm" component={ProductForm} hideNavBar initial />
+      <Scene key="ProductIndex" component={Main} hideNavBar initial />
+      <Scene key="ProductForm" component={ProductForm} hideNavBar />
     </Router>
   </App>
 );
