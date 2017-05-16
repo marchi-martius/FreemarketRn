@@ -1520,13 +1520,19 @@ eslint-config-airbnb@^14.1.0:
   dependencies:
     eslint-config-airbnb-base "^11.1.0"
 
-eslint-import-resolver-node@^0.2.0:
+eslint-import-resolver-node@^0.2.0, eslint-import-resolver-node@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.2.3.tgz#5add8106e8c928db2cba232bcd9efa846e3da16c"
   dependencies:
     debug "^2.2.0"
     object-assign "^4.0.1"
     resolve "^1.1.6"
+
+eslint-import-resolver-react-native@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-import-resolver-react-native/-/eslint-import-resolver-react-native-0.0.1.tgz#eff3b1c2d1ed05f3151cf4db25e333832629e69d"
+  dependencies:
+    eslint-import-resolver-node "^0.2.3"
 
 eslint-module-utils@^2.0.0:
   version "2.0.0"
@@ -3639,6 +3645,10 @@ redux-logger@^3.0.1:
   resolved "https://registry.yarnpkg.com/redux-logger/-/redux-logger-3.0.1.tgz#ae8ae4c3c55ed3dd7aa31509f0856c5d3751057a"
   dependencies:
     deep-diff "0.3.4"
+
+redux-mock-store@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/redux-mock-store/-/redux-mock-store-1.2.3.tgz#1b3ad299da91cb41ba30d68e3b6f024475fb9e1b"
 
 redux-saga@^0.15.1:
   version "0.15.3"

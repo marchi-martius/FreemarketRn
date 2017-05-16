@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "borderRadius": 5,
+      "flexDirection": "row",
+      "margin": 10,
+      "padding": 10,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "http://i.ebayimg.com/images/g/64EAAOSwCQZZDJPO/s-l1600.jpg",
+      }
+    }
+    style={
+      Object {
+        "height": 100,
+        "width": 100,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "space-between",
+        "paddingLeft": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "black",
+          "fontSize": 15,
+        }
+      }
+    >
+      Item
+    </Text>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <View
+        style={Object {}}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 10,
+            }
+          }
+        >
+          Time Left:
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "red",
+              "fontSize": 15,
+            }
+          }
+        >
+          17m 5s
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "dimgray",
+            "borderRadius": 5,
+            "justifyContent": "center",
+            "width": 100,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "white",
+            }
+          }
+        >
+          $
+          10.00
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

@@ -2,16 +2,12 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import CategoryOverviewView from '../CategoryOverviewView';
+import CategoryHeaderView from '../CategoryHeaderView.android';
 import categories from '../../constants/categories';
 
 it('renders correctly', () => {
   const tree = renderer.create(
-    <CategoryOverviewView
-      category={categories[0]}
-      platform="android"
-      onHeaderIconClicked={() => {}}
-    />,
+    <CategoryHeaderView category={categories[0]} onIconClicked={() => {}} />,
   ).toJSON();
 
   expect(tree).toMatchSnapshot();

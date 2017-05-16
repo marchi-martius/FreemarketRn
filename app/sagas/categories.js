@@ -5,7 +5,7 @@ import {
   categoriesError,
   requestCategories,
 } from '../reducers/categories';
-import fetchAllCategories from '../Api';
+import { fetchAllCategories } from '../Api';
 
 export function* fetchCategories() {
   try {

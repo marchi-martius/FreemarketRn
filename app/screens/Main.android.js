@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { DrawerLayoutAndroid, View, Text, StyleSheet } from 'react-native';
 
 import CategoryList from '../containers/CategoryList';
-import CategoryOverview from '../containers/CategoryOverview';
+import ProductList from '../containers/ProductList';
+// import CategoryOverview from '../containers/CategoryOverview';
+import CategoryHeader from '../containers/CategoryHeader';
 import colors from '../constants/colors';
 
 const styles = StyleSheet.create({
@@ -46,10 +48,8 @@ const Main = () => (
     }
     ref={(_drawer) => { this.drawer = _drawer; }}
   >
-    <CategoryOverview
-      platform="android"
-      onHeaderIconClicked={() => this.drawer.openDrawer()}
-    />
+    <CategoryHeader onIconClicked={() => this.drawer.openDrawer()} />
+    <ProductList />
   </DrawerLayoutAndroid>
 );
 

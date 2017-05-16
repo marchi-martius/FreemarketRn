@@ -2,12 +2,15 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import CategoryHeader from '../CategoryHeader.android';
-import categories from '../../constants/categories';
+import ProductListRow from '../ProductListRow';
 
 it('renders correctly', () => {
   const tree = renderer.create(
-    <CategoryHeader category={categories[0]} onIconClicked={() => {}} />,
+    <ProductListRow
+      name="Item"
+      image="http://i.ebayimg.com/images/g/64EAAOSwCQZZDJPO/s-l1600.jpg"
+      price={10}
+    />,
   ).toJSON();
 
   expect(tree).toMatchSnapshot();
