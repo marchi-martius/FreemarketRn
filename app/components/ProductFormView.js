@@ -13,6 +13,7 @@ const Product = t.struct({
 export default class ProductForm extends Component {
   state = {
     avatarSrouce: null,
+    image: null
   };
 
   selectPhotoTapped() {
@@ -44,7 +45,8 @@ export default class ProductForm extends Component {
         // let source = { uri: 'data:image/jpeg;base64,' + response.data };
 
         this.setState({
-          avatarSource: source
+          avatarSource: source,
+          localImage: response
         });
       }
     });
@@ -56,6 +58,12 @@ export default class ProductForm extends Component {
     } else {
       return <Text>Select a Photo</Text>;
     }
+  }
+
+  onFormPress() {
+    const product = this.form.getValue();
+    const { localImage } = this.state;
+    this.props.onPress({product, localImage});
   }
 
   render() {
@@ -71,7 +79,7 @@ export default class ProductForm extends Component {
           type={Product}
         />
         <Button
-          onPress={() => this.props.onPress(this.form.getValue())}
+          onPress={() => this.onFormPress()}
           title="Add Product"
         />
       </View>

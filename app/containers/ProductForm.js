@@ -6,11 +6,12 @@ import ProductFormView from '../components/ProductFormView';
 import { requestCreateProduct } from '../reducers/products';
 
 const mapDispatchToProps = (dispatch) => ({
-  onPress: (product) => {
+  onPress: (payload) => {
     Keyboard.dismiss();
-    if (product) {
-      const image = "http://i.ebayimg.com/images/g/64EAAOSwCQZZDJPO/s-l1600.jpg";
-      dispatch(requestCreateProduct({...product, image: image}));
+    if (payload.product) {
+      // const image = "http://i.ebayimg.com/images/g/64EAAOSwCQZZDJPO/s-l1600.jpg";
+      // dispatch(requestCreateProduct({...product, image: image}));
+      dispatch(requestCreateProduct(payload));
     }
   }
 });

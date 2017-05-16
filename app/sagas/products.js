@@ -11,6 +11,7 @@ import {
   createProductError
 } from '../reducers/products';
 import * as Api from '../Api';
+import * as FirebaseApi from '../FirebaseApi';
 
 export function* fetchProducts() {
   // try {
@@ -28,7 +29,11 @@ export function* watchProductsRequest() {
 
 export function* createProduct({payload}) {
   // try {
-    yield call(Api.createProduct, payload);
+    console.log(FirebaseApi.saveImageToStorage, payload.localImage);
+    const image = yield call(FirebaseApi.saveImageToStorage, payload.localImage);
+    console.log(image);
+    const { product } = payload;
+    yield call(Api.createProduct, {...product, image});
     yield put(createProductSuccess());
     yield call(Actions.ProductIndex);
   // } catch (e) {
