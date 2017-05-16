@@ -11,13 +11,15 @@ const styles = StyleSheet.create({
   },
 });
 
-const CategoryHeaderView = ({ category, onIconClicked }) => (
+const CategoryHeaderView = ({ category, onIconClicked, onActionSelected }) => (
   <ToolbarAndroid
     title={category.name}
     titleColor={colors.headerText}
     navIconName={'bars'}
     onIconClicked={() => onIconClicked()}
     style={styles.toolbar}
+    actions={[{title: 'Add Product', iconName: 'plus', show: 'always'}]}
+    onActionSelected={onActionSelected}
   />
 );
 
