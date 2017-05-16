@@ -9,13 +9,7 @@ const Product = t.struct({
   price: t.Number,
 });
 
-class ProductForm extends Component {
-  onPress() {
-    const value = this.form.getValue();
-    if (value) {
-      console.log(value.name, value.price);
-    }
-  }
+export default class ProductForm extends Component {
   render() {
     return (
       <View>
@@ -24,12 +18,10 @@ class ProductForm extends Component {
           type={Product}
         />
         <Button
-          onPress={() => this.onPress()}
+          onPress={() => this.props.onPress(this.form.getValue())}
           title="Add Product"
         />
       </View>
     )
   }
 }
-
-export default ProductForm;

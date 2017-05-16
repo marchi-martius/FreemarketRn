@@ -4,7 +4,7 @@ import { Router, Scene } from 'react-native-router-flux'
 
 import App from './app/App';
 import Main from './app/screens/Main.android';
-import ProductForm from './app/screens/ProductForm';
+import ProductForm from './app/containers/ProductForm';
 
 const FreemarketRn = () => (
   <App>
