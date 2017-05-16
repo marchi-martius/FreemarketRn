@@ -52,7 +52,7 @@ export default class ProductForm extends Component {
 
   renderPhoto() {
     if (this.state.avatarSource) {
-      return <Image source={this.state.avatarSource} />;
+      return <Image source={this.state.avatarSource} style={{width: 150, height: 150}} />;
     } else {
       return <Text>Select a Photo</Text>;
     }
