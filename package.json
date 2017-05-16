@@ -14,6 +14,7 @@
     "prop-types": "^15.5.8",
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.4",
+    "react-native-image-picker": "^0.26.3",
     "react-native-router-flux": "https://github.com/itinance/react-native-router-flux#fc1b8261144fe5f3132ac4940dd794ac06e9f351",
     "react-native-vector-icons": "^4.1.1",
     "react-redux": "^5.0.4",

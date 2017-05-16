@@ -3708,6 +3708,10 @@ react-native-experimental-navigation@0.26.x:
     fbjs "^0.8.1"
     react-addons-pure-render-mixin "^15.0.2"
 
+react-native-image-picker@^0.26.3:
+  version "0.26.3"
+  resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-0.26.3.tgz#0ad2eede49501a7046d8046a73813696539c3dcd"
+
 "react-native-router-flux@https://github.com/itinance/react-native-router-flux#fc1b8261144fe5f3132ac4940dd794ac06e9f351":
   version "3.38.1"
   resolved "https://github.com/itinance/react-native-router-flux#fc1b8261144fe5f3132ac4940dd794ac06e9f351"

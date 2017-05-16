@@ -32,9 +32,8 @@ const initialCreatorState = {
 
 const creator = createReducer({
   [requestCreateProduct]: (state, product) => ({ ...state, completed: false }),
-  [createProductSuccess]: (state, records) => ({
+  [createProductSuccess]: (state) => ({
     ...state,
-    records,
     completed: true,
   }),
   [createProductError]: (state, error) => ({ ...state, error, completed: true }),
