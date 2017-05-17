@@ -21,13 +21,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderWidth: 4,
     borderStyle: 'dotted',
-    borderRadius: 1
+    borderRadius: 1,
   },
   button: {
     paddingTop: 10,
     paddingBottom: 10,
-    width: 150
-  }
+    width: 150,
+  },
 });
 
 export default class FormImagePicker extends Component {
@@ -42,7 +42,7 @@ export default class FormImagePicker extends Component {
     if (imageSource) {
       return (
         <Image
-          source={{uri: imageSource}}
+          source={{ uri: imageSource }}
           style={styles.image}
         />
       );
@@ -75,4 +75,8 @@ export default class FormImagePicker extends Component {
 FormImagePicker.propTypes = {
   imageSource: PropTypes.string,
   setLocalImage: PropTypes.func.isRequired,
+};
+
+FormImagePicker.defaultProps = {
+  imageSource: null,
 };

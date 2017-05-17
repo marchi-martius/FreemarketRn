@@ -18,7 +18,7 @@ const CategoryHeaderView = ({ category, onIconClicked, onActionSelected }) => (
     navIconName={'bars'}
     onIconClicked={() => onIconClicked()}
     style={styles.toolbar}
-    actions={[{title: 'Add Product', iconName: 'plus', show: 'always'}]}
+    actions={[{ title: 'Add Product', iconName: 'plus', show: 'always' }]}
     onActionSelected={onActionSelected}
   />
 );
@@ -28,6 +28,7 @@ CategoryHeaderView.propTypes = {
     name: PropTypes.string.isRequired,
   }).isRequired,
   onIconClicked: PropTypes.func.isRequired,
+  onActionSelected: PropTypes.func.isRequired,
 };
 
 export default CategoryHeaderView;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Button, Text, StyleSheet } from 'react-native';
+import { View, Button, StyleSheet } from 'react-native';
 import t from 'tcomb-form-native';
 
 import FormImagePicker from './FormImagePicker';
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   button: {
     paddingTop: 10,
     paddingBottom: 10,
-  }
+  },
 });
 
 const Form = t.form.Form;
@@ -23,22 +23,25 @@ const Product = t.struct({
 });
 
 export default class ProductForm extends Component {
-  state = {
-    imageSrouce: null,
-    localImage: null
-  };
-
-  setLocalImage(localImage) {
-    this.setState({
-      imageSource: localImage.uri,
-      localImage: localImage
-    });
+  constructor(props) {
+    super(props);
+    this.state = {
+      imageSrouce: null,
+      localImage: null,
+    };
   }
 
   onFormPress() {
     const product = this.form.getValue();
     const { localImage } = this.state;
-    this.props.onPress({product, localImage});
+    this.props.onPress({ product, localImage });
+  }
+
+  setLocalImage(localImage) {
+    this.setState({
+      imageSource: localImage.uri,
+      localImage,
+    });
   }
 
   render() {
@@ -46,10 +49,10 @@ export default class ProductForm extends Component {
       <View style={styles.formView}>
         <FormImagePicker
           imageSource={this.state.imageSource}
-          setLocalImage={(localImage) => this.setLocalImage(localImage)}
+          setLocalImage={localImage => this.setLocalImage(localImage)}
         />
         <Form
-          ref={ _form => this.form = _form }
+          ref={_form => (this.form = _form)}
           type={Product}
         />
         <View style={styles.button}>

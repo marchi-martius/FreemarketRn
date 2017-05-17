@@ -1,5 +1,4 @@
 import { call, put } from 'redux-saga/effects';
-import { Actions } from 'react-native-router-flux';
 
 import { fetchProducts, createProduct } from '../products';
 import {
@@ -34,22 +33,21 @@ describe('fetchProducts', () => {
 describe('createProduct', () => {
   it('calls success action on resolve', () => {
     const product = {};
-    const payload = {localImage: true, product};
-    const image = "image src";
+    const payload = { localImage: true, product };
+    const image = 'image src';
 
-    const gen = createProduct({payload});
+    const gen = createProduct({ payload });
 
     expect(gen.next().value).toEqual(call(FirebaseApi.saveImageToStorage, payload.localImage));
-    expect(gen.next(image).value).toEqual(call(Api.createProduct, {...product, image}));
+    expect(gen.next(image).value).toEqual(call(Api.createProduct, { ...product, image }));
     expect(gen.next().value).toEqual(put(createProductSuccess()));
   });
 
   it('calls error on failure', () => {
     const product = {};
-    const payload = {localImage: true, product};
-    const image = "image src";
+    const payload = { localImage: true, product };
 
-    const gen = createProduct({payload});
+    const gen = createProduct({ payload });
     const error = {};
 
     expect(gen.next().value).toEqual(call(FirebaseApi.saveImageToStorage, payload.localImage));
