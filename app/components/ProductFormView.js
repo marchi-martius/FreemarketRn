@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
-import { View, Button, Text } from 'react-native';
+import { View, Button, Text, StyleSheet } from 'react-native';
 import t from 'tcomb-form-native';
 
 import FormImagePicker from './FormImagePicker';
+
+const styles = StyleSheet.create({
+  formView: {
+    padding: 10,
+  },
+  button: {
+    paddingTop: 10,
+    paddingBottom: 10,
+  }
+});
 
 const Form = t.form.Form;
 
@@ -32,7 +42,7 @@ export default class ProductForm extends Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.formView}>
         <FormImagePicker
           imageSource={this.state.imageSource}
           setLocalImage={(localImage) => this.setLocalImage(localImage)}
@@ -41,16 +51,21 @@ export default class ProductForm extends Component {
           ref={ _form => this.form = _form }
           type={Product}
         />
-        <Button
-          onPress={() => this.onFormPress()}
-          title="Add Product"
-        />
-        <Button
-          onPress={() => this.props.onBackPress()}
-          color="red"
-          title="Back"
-        />
+        <View style={styles.button}>
+          <Button
+            onPress={() => this.onFormPress()}
+            title="Add Product"
+          />
+        </View>
+        <View style={styles.button}>
+          <Button
+            style={styles.button}
+            onPress={() => this.props.onBackPress()}
+            color="red"
+            title="Back"
+          />
+        </View>
       </View>
-    )
+    );
   }
 }

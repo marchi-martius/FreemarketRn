@@ -1,6 +1,34 @@
 import React, { Component } from 'react';
-import { View, Image, Text, Button } from 'react-native';
+import { View, Image, Text, Button, StyleSheet } from 'react-native';
+
+
 import { selectPhotoTapped } from '../services/ImagePickerService';
+
+const styles = StyleSheet.create({
+  formImage: {
+    alignItems: 'center',
+  },
+  imageSection: {
+    width: 150,
+    height: 150,
+  },
+  image: {
+    flex: 1,
+  },
+  imagePlaceholder: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 4,
+    borderStyle: 'dotted',
+    borderRadius: 1
+  },
+  button: {
+    paddingTop: 10,
+    paddingBottom: 10,
+    width: 150
+  }
+});
 
 export default class FormImagePicker extends Component {
   selectPhoto() {
@@ -15,22 +43,30 @@ export default class FormImagePicker extends Component {
       return (
         <Image
           source={{uri: imageSource}}
-          style={{width: 150, height: 150}}
+          style={styles.image}
         />
       );
     } else {
-      return <Text>Select a Photo</Text>;
+      return (
+        <View style={styles.imagePlaceholder}>
+          <Text>Place for an Image</Text>
+        </View>
+      );
     }
   }
 
   render() {
     return (
-      <View>
-        { this.renderPhoto() }
-        <Button
-          title="Add Image"
-          onPress={() => this.selectPhoto()}
-        />
+      <View style={styles.formImage}>
+        <View style={styles.imageSection}>
+          { this.renderPhoto() }
+        </View>
+        <View style={styles.button}>
+          <Button
+            title="Select Image"
+            onPress={() => this.selectPhoto()}
+          />
+        </View>
       </View>
     );
   }
