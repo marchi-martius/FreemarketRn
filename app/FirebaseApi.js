@@ -26,27 +26,20 @@ export const saveImageToStorage = localImage => {
     const imageRef = storage.ref('images').child(`${sessionId}${localImage.fileName}`);
     fs.readFile(uploadUri, 'base64')
       .then((data) => {
-        console.log(1);
-        console.log(data);
         return Blob.build(data, { type: `${mime};BASE64` })
       })
       .then((blob) => {
-        console.log(2);
-        console.log(blob);
         uploadBlob = blob;
         return imageRef.put(blob, { contentType: mime })
       })
       .then(() => {
-        console.log(3);
         uploadBlob.close();
         return imageRef.getDownloadURL();
       })
       .then((url) => {
-        console.log(4);
         resolve(url);
       })
       .catch((error) => {
-        console.log(error);
         reject(error);
     });
   });

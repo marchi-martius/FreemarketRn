@@ -29,10 +29,8 @@ export function* watchProductsRequest() {
 
 export function* createProduct({payload}) {
   // try {
-    console.log(FirebaseApi.saveImageToStorage, payload.localImage);
+    const { localImage, product } = payload;
     const image = yield call(FirebaseApi.saveImageToStorage, payload.localImage);
-    console.log(image);
-    const { product } = payload;
     yield call(Api.createProduct, {...product, image});
     yield put(createProductSuccess());
     yield call(Actions.ProductIndex);
