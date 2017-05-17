@@ -19,7 +19,6 @@ export function* fetchProducts() {
     const products = Object.keys(data)
       .map((id) => ({...data[id], id}))
       .reverse(); // new records first
-    console.log(products);
     yield put(productsSuccess(products));
   } catch (e) {
     console.log(e);

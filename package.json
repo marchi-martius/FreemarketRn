@@ -45,6 +45,9 @@
     "redux-mock-store": "^1.2.3"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+		"transformIgnorePatterns": [
+			"/node_modules/(?!native-base)/"
+		]
   }
 }

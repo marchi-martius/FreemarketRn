@@ -2,7 +2,17 @@
 
 exports[`renders correctly 1`] = `
 <Icon.ToolbarAndroid
+  actions={
+    Array [
+      Object {
+        "iconName": "plus",
+        "show": "always",
+        "title": "Add Product",
+      },
+    ]
+  }
   navIconName="bars"
+  onActionSelected={undefined}
   onIconClicked={[Function]}
   style={
     Object {
