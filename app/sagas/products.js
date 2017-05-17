@@ -16,7 +16,10 @@ import * as FirebaseApi from '../FirebaseApi';
 export function* fetchProducts() {
   try {
     const { data } = yield call(Api.fetchAllProducts);
-    const products = Object.keys(data).map((k) => data[k]).reverse();
+    const products = Object.keys(data)
+      .map((id) => ({...data[id], id}))
+      .reverse(); // new records first
+    console.log(products);
     yield put(productsSuccess(products));
   } catch (e) {
     console.log(e);
