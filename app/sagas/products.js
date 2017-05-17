@@ -14,13 +14,14 @@ import * as Api from '../Api';
 import * as FirebaseApi from '../FirebaseApi';
 
 export function* fetchProducts() {
-  // try {
+  try {
     const { data } = yield call(Api.fetchAllProducts);
     const products = Object.keys(data).map((k) => data[k]).reverse();
     yield put(productsSuccess(products));
-  // } catch (e) {
-  //   yield put(productsError(e));
-  // }
+  } catch (e) {
+    console.log(e);
+    yield put(productsError(e));
+  }
 }
 
 export function* watchProductsRequest() {
@@ -28,15 +29,16 @@ export function* watchProductsRequest() {
 }
 
 export function* createProduct({payload}) {
-  // try {
+  try {
     const { localImage, product } = payload;
     const image = yield call(FirebaseApi.saveImageToStorage, payload.localImage);
     yield call(Api.createProduct, {...product, image});
     yield put(createProductSuccess());
     yield call(Actions.ProductIndex);
-  // } catch (e) {
-  //   yield put(createProductError(e));
-  // }
+  } catch (e) {
+    console.log(e);
+    yield put(createProductError(e));
+  }
 }
 
 export function* watchCreateProductRequest() {

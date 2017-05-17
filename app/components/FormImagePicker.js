@@ -1,41 +1,20 @@
 import React, { Component } from 'react';
 import { View, Image, Text, Button } from 'react-native';
-import ImagePicker from 'react-native-image-picker';
+import { selectPhotoTapped } from '../services/ImagePickerService';
 
 export default class FormImagePicker extends Component {
-  selectPhotoTapped() {
-    const options = {
-      quality: 1.0,
-      maxWidth: 500,
-      maxHeight: 500,
-      storageOptions: {
-        skipBackup: true
-      }
-    };
-
-    ImagePicker.showImagePicker(options, (response) => {
-      console.log('Response = ', response);
-
-      if (response.didCancel) {
-        console.log('User cancelled photo picker');
-      }
-      else if (response.error) {
-        console.log('ImagePicker Error: ', response.error);
-      }
-      else if (response.customButton) {
-        console.log('User tapped custom button: ', response.customButton);
-      }
-      else {
-        this.props.setLocalImage(response);
-      }
+  selectPhoto() {
+    selectPhotoTapped().then((localImage) => {
+      this.props.setLocalImage(localImage);
     });
   }
 
   renderPhoto() {
-    if (this.props.imageSource) {
+    const { imageSource } = this.props;
+    if (imageSource) {
       return (
         <Image
-          source={{uri: this.props.imageSource}}
+          source={{uri: imageSource}}
           style={{width: 150, height: 150}}
         />
       );
@@ -50,7 +29,7 @@ export default class FormImagePicker extends Component {
         { this.renderPhoto() }
         <Button
           title="Add Image"
-          onPress={() => this.selectPhotoTapped()}
+          onPress={() => this.selectPhoto()}
         />
       </View>
     );

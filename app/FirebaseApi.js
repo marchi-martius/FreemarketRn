@@ -19,7 +19,7 @@ window.Blob = Blob
 
 export const saveImageToStorage = localImage => {
   return new Promise((resolve, reject) => {
-    const uploadUri = localImage.uri;//.replace('file://', '');
+    const uploadUri = localImage.uri;
     const mime = 'application/octet-stream';
     const sessionId = new Date().getTime();
     let uploadBlob = null;
