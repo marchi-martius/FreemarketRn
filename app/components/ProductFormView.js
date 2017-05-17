@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { View, Button, Text, StyleSheet } from 'react-native';
 import t from 'tcomb-form-native';
 
@@ -69,3 +70,8 @@ export default class ProductForm extends Component {
     );
   }
 }
+
+ProductForm.propTypes = {
+  onPress: PropTypes.func.isRequired,
+  onBackPress: PropTypes.func.isRequired,
+};

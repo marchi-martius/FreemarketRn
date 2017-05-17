@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { View, Image, Text, Button, StyleSheet } from 'react-native';
-
 
 import { selectPhotoTapped } from '../services/ImagePickerService';
 
@@ -71,3 +71,8 @@ export default class FormImagePicker extends Component {
     );
   }
 }
+
+FormImagePicker.propTypes = {
+  imageSource: PropTypes.string,
+  setLocalImage: PropTypes.func.isRequired,
+};
