@@ -37,21 +37,28 @@ export default class FormImagePicker extends Component {
     });
   }
 
-  renderPhoto() {
-    const { imageSource } = this.props;
-    if (imageSource) {
-      return (
-        <Image
-          source={{ uri: imageSource }}
-          style={styles.image}
-        />
-      );
+  renderImage() {
+    return (
+      <Image
+        source={{ uri: this.props.imageSource }}
+        style={styles.image}
+      />
+    );
+  }
+
+  renderPlaceholder() {
+    return (
+      <View style={styles.imagePlaceholder}>
+        <Text>Place for an Image</Text>
+      </View>
+    );
+  }
+
+  renderImageBlock() {
+    if (this.props.imageSource) {
+      return this.renderImage();
     } else {
-      return (
-        <View style={styles.imagePlaceholder}>
-          <Text>Place for an Image</Text>
-        </View>
-      );
+      return this.renderPlaceholder();
     }
   }
 
@@ -59,7 +66,7 @@ export default class FormImagePicker extends Component {
     return (
       <View style={styles.formImage}>
         <View style={styles.imageSection}>
-          { this.renderPhoto() }
+          { this.renderImageBlock() }
         </View>
         <View style={styles.button}>
           <Button
