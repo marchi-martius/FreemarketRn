@@ -12,13 +12,12 @@ import {
 } from '../reducers/products';
 import * as Api from '../Api';
 import * as FirebaseApi from '../FirebaseApi';
+import { objectWithRecordsToArray } from '../lib/helpers';
 
 export function* fetchProducts() {
   try {
     const { data } = yield call(Api.fetchAllProducts);
-    const products = Object.keys(data)
-      .map(id => ({ ...data[id], id }))
-      .reverse(); // new records first
+    const products = objectWithRecordsToArray(data).reverse(); // new records first
     yield put(productsSuccess(products));
   } catch (e) {
     console.log(e);
