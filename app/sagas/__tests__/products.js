@@ -8,8 +8,8 @@ import {
   createProductSuccess,
   createProductError,
 } from '../../reducers/products';
-import * as Api from '../../Api';
-import * as FirebaseApi from '../../FirebaseApi';
+import { fetchAllProducts, createNewProduct } from '../../Api';
+import { saveImageToStorage } from '../../FirebaseApi';
 
 describe('fetchProducts', () => {
   it('calls success action on resolve', () => {
@@ -17,7 +17,7 @@ describe('fetchProducts', () => {
     const products = [];
     const response = { data: products };
 
-    expect(gen.next().value).toEqual(call(Api.fetchAllProducts));
+    expect(gen.next().value).toEqual(call(fetchAllProducts));
     expect(gen.next(response).value).toEqual(put(productsSuccess(products)));
   });
 
@@ -25,7 +25,7 @@ describe('fetchProducts', () => {
     const gen = fetchProducts();
     const error = {};
 
-    expect(gen.next().value).toEqual(call(Api.fetchAllProducts));
+    expect(gen.next().value).toEqual(call(fetchAllProducts));
     expect(gen.throw(error).value).toEqual(put(productsError(error)));
   });
 });
@@ -38,8 +38,8 @@ describe('createProduct', () => {
 
     const gen = createProduct({ payload });
 
-    expect(gen.next().value).toEqual(call(FirebaseApi.saveImageToStorage, payload.localImage));
-    expect(gen.next(image).value).toEqual(call(Api.createProduct, { ...product, image }));
+    expect(gen.next().value).toEqual(call(saveImageToStorage, payload.localImage));
+    expect(gen.next(image).value).toEqual(call(createNewProduct, { ...product, image }));
     expect(gen.next().value).toEqual(put(createProductSuccess()));
   });
 
@@ -50,7 +50,7 @@ describe('createProduct', () => {
     const gen = createProduct({ payload });
     const error = {};
 
-    expect(gen.next().value).toEqual(call(FirebaseApi.saveImageToStorage, payload.localImage));
+    expect(gen.next().value).toEqual(call(saveImageToStorage, payload.localImage));
     expect(gen.throw(error).value).toEqual(put(createProductError(error)));
   });
 });

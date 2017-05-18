@@ -10,13 +10,13 @@ import {
   createProductSuccess,
   createProductError,
 } from '../reducers/products';
-import * as Api from '../Api';
-import * as FirebaseApi from '../FirebaseApi';
+import { fetchAllProducts, createNewProduct } from '../Api';
+import { saveImageToStorage } from '../FirebaseApi';
 import { objectWithRecordsToArray } from '../lib/helpers';
 
 export function* fetchProducts() {
   try {
-    const { data } = yield call(Api.fetchAllProducts);
+    const { data } = yield call(fetchAllProducts);
     const products = objectWithRecordsToArray(data).reverse(); // new records first
     yield put(productsSuccess(products));
   } catch (e) {
@@ -32,8 +32,8 @@ export function* watchProductsRequest() {
 export function* createProduct({ payload }) {
   try {
     const { localImage, product } = payload;
-    const image = yield call(FirebaseApi.saveImageToStorage, localImage);
-    yield call(Api.createProduct, { ...product, image });
+    const image = yield call(saveImageToStorage, localImage);
+    yield call(createNewProduct, { ...product, image });
     yield put(createProductSuccess());
     yield call(Actions.ProductIndex);
   } catch (e) {
