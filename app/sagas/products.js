@@ -20,7 +20,6 @@ export function* fetchProducts() {
     const products = objectWithRecordsToArray(data).reverse(); // new records first
     yield put(productsSuccess(products));
   } catch (e) {
-    console.log(e);
     yield put(productsError(e));
   }
 }
@@ -37,7 +36,6 @@ export function* createProduct({ payload }) {
     yield put(createProductSuccess());
     yield call(Actions.ProductIndex);
   } catch (e) {
-    console.log(e);
     yield put(createProductError(e));
   }
 }
