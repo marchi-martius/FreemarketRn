@@ -6,11 +6,12 @@ import {
   requestCategories,
 } from '../reducers/categories';
 import { fetchAllCategories } from '../Api';
+import { objectWithRecordsToArray } from '../lib/helpers';
 
 export function* fetchCategories() {
   try {
-    const response = yield call(fetchAllCategories);
-    const [, ...categories] = response.data;
+    const { data } = yield call(fetchAllCategories);
+    const categories = objectWithRecordsToArray(data);
     yield put(categoriesSuccess(categories));
   } catch (e) {
     yield put(categoriesError(e));
