@@ -12,7 +12,7 @@ exports[`renders correctly 1`] = `
     ]
   }
   navIconName="bars"
-  onActionSelected={undefined}
+  onActionSelected={[Function]}
   onIconClicked={[Function]}
   style={
     Object {

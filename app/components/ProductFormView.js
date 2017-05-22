@@ -22,7 +22,7 @@ const Product = t.struct({
   price: t.Number,
 });
 
-export default class ProductForm extends Component {
+export default class ProductFormView extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -74,7 +74,7 @@ export default class ProductForm extends Component {
   }
 }
 
-ProductForm.propTypes = {
+ProductFormView.propTypes = {
   onPress: PropTypes.func.isRequired,
   onBackPress: PropTypes.func.isRequired,
 };
