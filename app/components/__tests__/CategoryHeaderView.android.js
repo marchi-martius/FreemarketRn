@@ -7,10 +7,10 @@ import categories from '../../constants/categories';
 
 it('renders correctly', () => {
   const tree = renderer.create(
-    <CategoryHeaderView 
-      category={categories[0]} 
-      onIconClicked={() => {}} 
-      onActionSelected={() => {}} 
+    <CategoryHeaderView
+      category={categories[0]}
+      onIconClicked={() => {}}
+      onActionSelected={() => {}}
     />,
   ).toJSON();
 

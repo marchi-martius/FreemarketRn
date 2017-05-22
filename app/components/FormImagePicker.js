@@ -30,6 +30,12 @@ const styles = StyleSheet.create({
   },
 });
 
+const renderPlaceholder = () => (
+  <View style={styles.imagePlaceholder}>
+    <Text>Place for an Image</Text>
+  </View>
+);
+
 export default class FormImagePicker extends Component {
   selectPhoto() {
     selectPhotoTapped().then((localImage) => {
@@ -46,19 +52,11 @@ export default class FormImagePicker extends Component {
     );
   }
 
-  renderPlaceholder() {
-    return (
-      <View style={styles.imagePlaceholder}>
-        <Text>Place for an Image</Text>
-      </View>
-    );
-  }
-
   renderImageBlock() {
     if (this.props.imageSource) {
       return this.renderImage();
     } else {
-      return this.renderPlaceholder();
+      return renderPlaceholder();
     }
   }
 
