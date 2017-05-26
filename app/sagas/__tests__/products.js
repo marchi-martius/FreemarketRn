@@ -8,8 +8,8 @@ import {
   createProductSuccess,
   createProductError,
 } from '../../reducers/products';
-import { fetchAllProducts, createNewProduct } from '../../Api';
-import { saveImageToStorage } from '../../FirebaseApi';
+import { fetchAllProducts, createNewProduct } from '../../api/rest';
+import { saveImageToStorage } from '../../api/firebase';
 
 describe('fetchProducts', () => {
   it('calls success action on resolve', () => {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Button, StyleSheet } from 'react-native';
+import { View, Button, StyleSheet, Keyboard } from 'react-native';
 import t from 'tcomb-form-native';
 
 import FormImagePicker from './FormImagePicker';
@@ -34,7 +34,11 @@ export default class ProductFormView extends Component {
   onFormPress() {
     const product = this.form.getValue();
     const { localImage } = this.state;
-    this.props.onPress({ product, localImage });
+
+    Keyboard.dismiss();
+    if (product) {
+      this.props.onPress({ product, localImage });
+    }
   }
 
   setLocalImage(localImage) {

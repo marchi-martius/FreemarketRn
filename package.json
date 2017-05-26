@@ -46,8 +46,8 @@
   },
   "jest": {
     "preset": "react-native",
-		"transformIgnorePatterns": [
-			"/node_modules/(?!native-base)/"
-		]
+    "transformIgnorePatterns": [
+      "/node_modules/(?!native-base)/"
+    ]
   }
 }

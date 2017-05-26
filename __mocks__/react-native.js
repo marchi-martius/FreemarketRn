@@ -10,7 +10,7 @@ jest.mock('Linking', () => {
   };
 });
 
-jest.mock('../app/FirebaseApi', () => {
+jest.mock('../app/api/firebase', () => {
   return {
     saveImageToStorage: jest.fn(),
   }
