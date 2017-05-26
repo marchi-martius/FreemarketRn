@@ -2,11 +2,14 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Index from '../index.ios';
+import FormImagePicker from '../FormImagePicker';
 
-it('renders correctly', () => {
+it('renders successfully', () => {
   const tree = renderer.create(
-    <Index />,
+    <FormImagePicker
+      imageSource={''}
+      setLocalImage={() => true}
+    />,
   ).toJSON();
 
   expect(tree).toMatchSnapshot();

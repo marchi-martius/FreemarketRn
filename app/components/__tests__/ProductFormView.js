@@ -2,11 +2,14 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Index from '../index.android';
+import ProductFormView from '../ProductFormView';
 
-it('renders correctly', () => {
+it('renders successfully', () => {
   const tree = renderer.create(
-    <Index />,
+    <ProductFormView
+      onPress={() => true}
+      onBackPress={() => true}
+    />,
   ).toJSON();
 
   expect(tree).toMatchSnapshot();
